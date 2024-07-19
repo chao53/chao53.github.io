@@ -1,42 +1,8 @@
 ---
-title: Hello World
+title: About Me
+top: 100
 ---
-Welcome to [Hexo](https://hexo.io/)! This is your very first post. Check [documentation](https://hexo.io/docs/) for more info. If you get any problems when using Hexo, you can find the answer in [troubleshooting](https://hexo.io/docs/troubleshooting.html) or you can ask me on [GitHub](https://github.com/hexojs/hexo/issues).
+Hi! I'm Eric Chan, a game programmer from China. I've been making games with the Warcraft III World Editor since I was 12. During my student years, I played numerous games, which inspired me to attend Northeastern University(China). There, I studied Digital Media Technology, a program specifically designed to cultivate professionals for the gaming industry. During my junior year, I completed a one-year internship at Tencent(Massive Entertainment), working as a game developer. After graduating in 2023, I joined the AAA project at Yotta Games, where I have been working as a game developer ever since.
 
-## Quick Start
+Here you can view some demos that I either created or contributed to. Some of them were created as part of my experiments with gaming technology, others were developed during game jams, and some were projects I worked on during my internships. Anyway, I hope you enjoy exploring this content. (^o^)/
 
-### Create a new post
-
-``` bash
-$ hexo new "My New Post"
-```
-
-More info: [Writing](https://hexo.io/docs/writing.html)
-
-### Run server
-
-``` bash
-$ hexo server
-```
-
-More info: [Server](https://hexo.io/docs/server.html)
-
-### Generate static files
-
-``` bash
-$ hexo generate
-```
-
-More info: [Generating](https://hexo.io/docs/generating.html)
-
-### Deploy to remote sites
-
-``` bash
-$ hexo deploy
-```
-
-
-
-![aa](/images/aa.png)
-
-More info: [Deployment](https://hexo.io/docs/one-command-deployment.html)
