@@ -18,16 +18,6 @@
                 <h2 class="card-text--title"><%= post.title || "(no title)" %></h2>
               </a>
             <% } %>
-            <div class="card-text--row">
-              <span>发布于</span>
-              <%- partial("../_widget/date", { class_name: 'article-date', post: post, date_format: null }) %>
-            </div>
-            <% if ( date(post.updated, null) != date(post.date, null) ) { %>
-              <div class="last-time">
-                <span>更新于</span>
-                <%- partial("../_widget/updated", { class_name: 'article-updated', post: post, date_format: null }) %>
-              </div>
-            <% } %>
             <%- partial("../_widget/category", { page: post, class_name: post.cover ? 'dark' : 'light' }) %>
             <%- partial("../_widget/tag", { page: post, class_name: post.cover ? 'dark' : 'light' }) %>
           </div>

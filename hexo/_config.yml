@@ -106,4 +106,7 @@ deploy:
   repo: https://github.com/chao53/chao53.github.io.git
   branch: page
 
+plugins:
+  - hexo-tag-video
+
 
