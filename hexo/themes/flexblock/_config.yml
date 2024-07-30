@@ -8,12 +8,11 @@ menu:
 banner: /banner.jpg
 
 # 站点通知信息
-notice: flex-block主题部分重构，详情查看https://github.com/miiiku/flex-block
-
+notice: "Contact me: cchao7490@gmail.com"
 # 作者信息
 author:
   name: Eric Chan
-  avatar: https://s.gravatar.com/avatar/2d6b803eea37de0257620d5fabee7e64?s=200&r=g&d=retro
+  avatar: /profile.jfif
   description: hahaha
 
 toc:
@@ -91,7 +90,7 @@ baidu_analytics:
 # 腾讯分析
 tencent_analytics: 
 # 站点ico
-favicon: /favicon.ico
+favicon: /profile.jfif
 
 
 # Social Icon

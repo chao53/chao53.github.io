@@ -18,6 +18,29 @@
                 <h2 class="card-text--title"><%= post.title || "(no title)" %></h2>
               </a>
             <% } %>
+
+            <div class="card-text--row">
+              <% if (post.link) { %>
+                <a href="<%- url_for(post.link) %>" itemprop="url" target="_blank">
+                  <h2 class="last-time "><%= post.description || "(no title)" %></h2>
+                </a>
+              <% } else { %>
+                <a href="<%- url_for(post.path) %>" itemprop="url">
+                  <h2 class="last-time "><%= post.description || "(no title)" %></h2>
+                </a>
+              <% } %>
+
+            
+            <!-- <div class="card-text--row">
+              <span>发布于</span>
+              <%- partial("../_widget/date", { class_name: 'article-date', post: post, date_format: null }) %>
+            </div>
+            <% if ( date(post.updated, null) != date(post.date, null) ) { %>
+              <div class="last-time">
+                <span>更新于</span>
+                <%- partial("../_widget/updated", { class_name: 'article-updated', post: post, date_format: null }) %>
+              </div>
+            <% } %> -->
             <%- partial("../_widget/category", { page: post, class_name: post.cover ? 'dark' : 'light' }) %>
             <%- partial("../_widget/tag", { page: post, class_name: post.cover ? 'dark' : 'light' }) %>
           </div>
