@@ -1,5 +1,9 @@
 ---
 title: Evalution
+d1: An action game demo I worked on 
+d2: for one year during my internship
+d3: at Tencent.
+cover: /Evolution_cover.png
 top: 18
 tags:
   - UE
@@ -28,3 +32,4 @@ Here are some details of this demo：
 
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/wVoykDmwZ_0?si=aSCT2DrsYaP9wVMQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
