@@ -13,7 +13,7 @@ notice: "Contact me: cchao7490@gmail.com"
 author:
   name: Eric Chan
   avatar: /profile.jfif
-  description: hahaha
+  description: This website is about some video game demos I've created over the past few years.
 
 toc:
   max_depth: 3 # 生成 TOC 的最大深度

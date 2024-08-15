@@ -1,6 +1,6 @@
 ---
 title: Massive Crowd Simulation
-cover: crowed_cover.png
+cover: /crowed_cover.png
 d1: A crowd simulation demo I
 d2: participated in developing while
 d3: working at Tencent.

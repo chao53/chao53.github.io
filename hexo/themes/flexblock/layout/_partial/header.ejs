@@ -13,8 +13,8 @@
       <div class="post-text layout-block layout-padding">
         <h1 class="title-wrap"><%= config.title %></h1>
         <% if (config.subtitle) { %>
-          <h2 class="title-sub-wrap"><%= config.subtitle %></h2>
-          <h2 class="title-sub-wrap"><%= config.description %></h2>
+          <h2 class="intro-title-wrap"><%= config.subtitle %></h2>
+          <h2 class="intro-desc-wrap"><%= config.description %></h2>
         <% } %>
       </div>
     </div>
@@ -22,7 +22,7 @@
 
   <%# archive container %>
   <% if (is_archive()) { %>
-    <div class="header-content1">
+    <div class="header-content2">
       <div class="post-text layout-block layout-padding">
         <h1 class="title-wrap">归档</h1>
         <h2 class="title-sub-wrap">共有<%= site.posts.length %>篇文章</h2>
@@ -38,7 +38,7 @@
         if (category.name === page.category) length = category.length
       });
     %>
-    <div class="header-content1">
+    <div class="header-content2">
       <div class="post-text layout-block layout-padding">
         <h1 class="title-wrap"><%= page.category %></h1>
         <h2 class="title-sub-wrap">当前分类下共有<%= length %>篇文章</h2>
@@ -54,7 +54,7 @@
         if (tag.name === page.tag) length = tag.length
       });
     %>
-    <div class="header-content1">
+    <div class="header-content2">
       <div class="post-text layout-block layout-padding">
         <h1 class="title-wrap"><%= page.tag %></h1>
         <h2 class="title-sub-wrap">当前标签下共有<%= length %>篇文章</h2>
@@ -64,11 +64,11 @@
 
   <%# post banner %>
   <% if (is_post()) { %>
-    <div class="header-content1">
+    <div class="header-content2">
       <div class="post-text layout-block">
         <div class="layout-margin">
           <h1 class="title-wrap"><%= page.title %></h1>
-          <h2 class="title-sub-wrap">
+          <!-- <h2 class="title-sub-wrap">
             <strong><%= page.author || config.author %></strong>
             <span>发布于</span>
             <%- partial("../_widget/date", { class_name: 'article-date', post: page, date_format: null }) %>
@@ -84,7 +84,7 @@
               <em>文章访问量</em>
               <i class="leancloud-visitors-count"></i>
             </h2>
-          <% } %>
+          <% } %> -->
           <%- partial("../_widget/category", { page: page, class_name: 'dark' }) %>
           <%- partial("../_widget/tag", { page: page, class_name: 'dark' }) %>
         </div>
@@ -94,7 +94,7 @@
 
   <%# page banner %>
   <% if (is_page()) { %>
-    <div class="header-content1">
+    <div class="header-content2">
       <div class="post-text layout-block layout-padding">
         <h1 class="title-wrap"><%= page.title %></h1>
         <% if (page.subtitle) { %>
