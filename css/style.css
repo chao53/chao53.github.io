@@ -1,3 +1,46 @@
+@media screen and (min-width: 768px) {
+  :root {
+    --layout-max-width: 1200px;
+    --layout-padding: 20px;
+    --content-large-padding: 40px 38px 46px;
+    --content-small-padding: 20px 19px 23px;
+    --font-large-size: 43px;
+    --font-stress-size: 24px;
+    --font-common-size: 17px;
+    --font-base-size: 14px;
+    --font-base-lh: 1.8;
+    --index-banner-height: 870px;
+    --post-banner-height: 500px;
+    --content-large-padding: 30px 28px 26px;
+    --content-primary-padding: 23px;
+    --soft-large-radius: 16px;
+    --soft-primary-radius: 12px;
+    --soft-small-radius: 6px;
+  }
+}
+@media screen and (max-width: 767px) {
+  :root {
+    --layout-max-width: 100%;
+    --layout-padding: 10px;
+    --content-large-padding: 30px 28px 34px;
+    --content-small-padding: 14px 12px 16px;
+    --font-large-size: 22px;
+    --font-stress-size: 18px;
+    --font-common-size: 14px;
+    --font-base-size: 12px;
+    --font-base-lh: 1.4;
+    --index-banner-height: 280px;
+    --post-banner-height: 280px;
+    --content-large-padding: 30px 28px 34px;
+    --content-primary-padding: 16px;
+    --soft-large-radius: 16px;
+    --soft-primary-radius: 6px;
+    --soft-small-radius: 4px;
+  }
+}
+:root {
+  --soft-shadow: 3px;
+}
 :root.theme-light {
   --theme-bg-primary: #f5f8fa;
   --theme-bg-high: #fff;
@@ -450,9 +493,9 @@ html.show-mobile-nav .navbar-list {
 .navbar-btn div:nth-child(3):before {
   transform: translateY(8px);
 }
-@media $mq-pc {
+@media screen and (min-width: 768px) {
   .navbar {
-    height: $navbar-height;
+    height: 54px;
   }
   .navbar-list {
     display: flex;
@@ -463,9 +506,9 @@ html.show-mobile-nav .navbar-list {
     display: none;
   }
 }
-@media $mq-mb {
+@media screen and (max-width: 767px) {
   .navbar {
-    height: $mobile-navbar-height;
+    height: 32px;
   }
   .navbar-btn {
     display: inline-block;
@@ -535,10 +578,20 @@ html.show-mobile-nav .navbar-list {
 .header-container {
   position: relative;
 }
-.header-content {
+.header-content1 {
   position: relative;
   width: 100%;
-  height: var(--banner-height);
+  height: var(--index-banner-height);
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.header-content2 {
+  position: relative;
+  width: 100%;
+  height: var(--post-banner-height);
   margin: auto;
   display: flex;
   flex-direction: column;
@@ -586,6 +639,16 @@ html.show-mobile-nav .navbar-list {
   margin-top: 18px;
   font-size: var(--font-common-size);
 }
+.intro-title-wrap {
+  margin-top: 111px;
+  font-size: var(--font-stress-size);
+  text-align: center;
+}
+.intro-desc-wrap {
+  margin-top: 18px;
+  font-size: var(--font-common-size);
+  text-align: left;
+}
 .last-time {
   font-size: var(--font-base-size);
   margin-top: 10px;
@@ -632,14 +695,14 @@ html.show-mobile-nav .navbar-list {
 .social-icons svg.icon:hover {
   fill: var(--theme-text-stress);
 }
-@media $mq-pc {
+@media screen and (min-width: 768px) {
   .social-icons a {
     width: 45px;
     height: 45px;
     padding: 10px;
   }
 }
-@media $mq-mb {
+@media screen and (max-width: 767px) {
   .social-icons a {
     width: 32px;
     height: 32px;
@@ -740,8 +803,8 @@ html.show-mobile-nav .navbar-list {
 .markdown-body ol {
   padding-left: 2em;
   line-height: 1.75rem;
-  margin-top: $markdown-vertical;
-  margin-bottom: $markdown-vertical;
+  margin-top: 16px;
+  margin-bottom: 16px;
 }
 .markdown-body ul ul,
 .markdown-body ol ul,
@@ -768,7 +831,7 @@ html.show-mobile-nav .navbar-list {
   font-weight: bolder;
 }
 .markdown-body p + p {
-  margin-top: $markdown-vertical;
+  margin-top: 16px;
 }
 .markdown-body h1,
 .markdown-body h2 {
@@ -885,8 +948,8 @@ html.show-mobile-nav .navbar-list {
   background-color: var(--theme-bg-shadow);
 }
 .markdown-body details {
-  margin-top: $markdown-vertical;
-  margin-bottom: $markdown-vertical;
+  margin-top: 16px;
+  margin-bottom: 16px;
   border-radius: var(--soft-small-radius);
   border: 1px solid var(--theme-border-secondary);
   color: var(--theme-text-primary);
@@ -916,8 +979,8 @@ html.show-mobile-nav .navbar-list {
 }
 .markdown-body blockquote,
 .markdown-body .pullquote {
-  margin-top: $markdown-vertical;
-  margin-bottom: $markdown-vertical;
+  margin-top: 16px;
+  margin-bottom: 16px;
   border-left: 3px solid #9dacb7;
   padding: 2px 0 2px 0.7em;
   color: var(--theme-text-low);
@@ -937,8 +1000,8 @@ html.show-mobile-nav .navbar-list {
 }
 .markdown-body figure.highlight {
   position: relative;
-  margin-top: $markdown-vertical;
-  margin-bottom: $markdown-vertical;
+  margin-top: 16px;
+  margin-bottom: 16px;
   overflow: auto;
   color: #ccc;
   background: #2d2d2d;
@@ -1046,16 +1109,16 @@ html.show-mobile-nav .navbar-list {
   padding: 0;
 }
 .markdown-body pre[class*="language-"] {
-  margin-top: $markdown-vertical;
-  margin-bottom: $markdown-vertical;
+  margin-top: 16px;
+  margin-bottom: 16px;
   overflow: auto;
   color: #ccc;
   background: #2d2d2d;
   border-radius: var(--soft-small-radius);
 }
 .markdown-body .aplayer.aplayer-box {
-  margin-top: $markdown-vertical;
-  margin-bottom: $markdown-vertical;
+  margin-top: 16px;
+  margin-bottom: 16px;
   background-color: var(--theme-bg-color);
   overflow: hidden;
   border-radius: var(--soft-small-radius);
@@ -1072,16 +1135,16 @@ html.show-mobile-nav .navbar-list {
   background: linear-gradient(180deg, rgba(255,255,255,0) 0, var(--theme-bg-color));
 }
 .markdown-body .dplayer.dplayer-box {
-  margin-top: $markdown-vertical;
-  margin-bottom: $markdown-vertical;
+  margin-top: 16px;
+  margin-bottom: 16px;
   overflow: hidden;
   border-radius: var(--soft-small-radius);
   background-color: var(--theme-bg-primary);
   box-shadow: var(--soft-shadow) var(--soft-shadow) calc(var(--soft-shadow) * 2) var(--theme-bg-shadow), calc(-1 * var(--soft-shadow)) calc(-1 * var(--soft-shadow)) calc(var(--soft-shadow) * 2) var(--theme-bg-high);
 }
 .markdown-body .figure-image {
-  margin-top: $markdown-vertical;
-  margin-bottom: $markdown-vertical;
+  margin-top: 16px;
+  margin-bottom: 16px;
 }
 .markdown-body .figure-image img {
   display: table;
@@ -1092,7 +1155,7 @@ html.show-mobile-nav .navbar-list {
 .markdown-body .figure-image figcaption {
   display: block;
   text-align: center;
-  margin: $markdown-vertical 0;
+  margin: 16px 0;
   color: var(--theme-text-low);
 }
 .content-container.article-list {
@@ -1128,14 +1191,14 @@ html.show-mobile-nav .navbar-list {
   flex-wrap: wrap;
   justify-content: center;
 }
-@media $mq-pc {
+@media screen and (min-width: 768px) {
   .content-container.post-container .article-info .page-link-container .link-item {
     max-width: 100%;
     min-width: 33.333%;
     flex: 1 0 auto;
   }
 }
-@media $mq-mb {
+@media screen and (max-width: 767px) {
   .content-container.post-container .article-info .page-link-container .link-item {
     max-width: 100%;
     flex: 1 1 50%;
@@ -1276,7 +1339,7 @@ html.show-mobile-nav .navbar-list {
   background-color: var(--theme-bg-primary);
   box-shadow: var(--soft-shadow) var(--soft-shadow) calc(var(--soft-shadow) * 2) var(--theme-bg-shadow), calc(-1 * var(--soft-shadow)) calc(-1 * var(--soft-shadow)) calc(var(--soft-shadow) * 2) var(--theme-bg-high);
 }
-@media $mq-pc {
+@media screen and (min-width: 768px) {
   .content-container.post-container .article-info {
     flex: 0 1 calc(100% - 360px);
     min-width: calc(100% - 360px);
@@ -1285,7 +1348,7 @@ html.show-mobile-nav .navbar-list {
     display: flex;
   }
 }
-@media $mq-mb {
+@media screen and (max-width: 767px) {
   .content-container.post-container .article-info {
     flex: 1 1 100%;
     width: 100%;
