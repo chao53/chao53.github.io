@@ -1,6 +1,13 @@
 ---
 title: Unstable Reactor
-date: 2024-07-22 13:59:53
+cover: /unstable_cover.jpg
+d1: A puzzle game I developed within 
+d2: 48 hours while participating in 
+d3: the Ludum Dare game jam.
+tags:
+  - Puzzle
+  - Unity
+  - C#
 
 ---
 
@@ -21,4 +28,6 @@ This is a small game I developed solo within 48 hours for the Ludum Dare game ja
 
 
 
-https://ldjam.com/events/ludum-dare/49/$265071
+Download this demo:
+
+https://github.com/chao53/Eric-s-Profile/releases/download/release/Unstable.Reactor.zip

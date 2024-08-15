@@ -9,11 +9,12 @@
 
   <%# index container %>
   <% if (is_home()) { %>
-    <div class="header-content">
+    <div class="header-content1">
       <div class="post-text layout-block layout-padding">
         <h1 class="title-wrap"><%= config.title %></h1>
         <% if (config.subtitle) { %>
           <h2 class="title-sub-wrap"><%= config.subtitle %></h2>
+          <h2 class="title-sub-wrap"><%= config.description %></h2>
         <% } %>
       </div>
     </div>
@@ -21,7 +22,7 @@
 
   <%# archive container %>
   <% if (is_archive()) { %>
-    <div class="header-content">
+    <div class="header-content1">
       <div class="post-text layout-block layout-padding">
         <h1 class="title-wrap">归档</h1>
         <h2 class="title-sub-wrap">共有<%= site.posts.length %>篇文章</h2>
@@ -37,7 +38,7 @@
         if (category.name === page.category) length = category.length
       });
     %>
-    <div class="header-content">
+    <div class="header-content1">
       <div class="post-text layout-block layout-padding">
         <h1 class="title-wrap"><%= page.category %></h1>
         <h2 class="title-sub-wrap">当前分类下共有<%= length %>篇文章</h2>
@@ -53,7 +54,7 @@
         if (tag.name === page.tag) length = tag.length
       });
     %>
-    <div class="header-content">
+    <div class="header-content1">
       <div class="post-text layout-block layout-padding">
         <h1 class="title-wrap"><%= page.tag %></h1>
         <h2 class="title-sub-wrap">当前标签下共有<%= length %>篇文章</h2>
@@ -63,7 +64,7 @@
 
   <%# post banner %>
   <% if (is_post()) { %>
-    <div class="header-content">
+    <div class="header-content1">
       <div class="post-text layout-block">
         <div class="layout-margin">
           <h1 class="title-wrap"><%= page.title %></h1>
@@ -93,7 +94,7 @@
 
   <%# page banner %>
   <% if (is_page()) { %>
-    <div class="header-content">
+    <div class="header-content1">
       <div class="post-text layout-block layout-padding">
         <h1 class="title-wrap"><%= page.title %></h1>
         <% if (page.subtitle) { %>
