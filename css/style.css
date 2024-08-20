@@ -29,8 +29,8 @@
     --font-common-size: 14px;
     --font-base-size: 12px;
     --font-base-lh: 1.4;
-    --index-banner-height: 280px;
-    --post-banner-height: 280px;
+    --index-banner-height: 870px;
+    --post-banner-height: 320px;
     --content-large-padding: 30px 28px 34px;
     --content-primary-padding: 16px;
     --soft-large-radius: 16px;
@@ -640,7 +640,7 @@ html.show-mobile-nav .navbar-list {
   font-size: var(--font-common-size);
 }
 .intro-title-wrap {
-  margin-top: 111px;
+  margin-top: 411px;
   font-size: var(--font-stress-size);
   text-align: center;
 }
