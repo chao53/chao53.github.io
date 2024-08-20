@@ -104,7 +104,7 @@
           
             <h2 class="last-time">
               <span>最后更新于</span>
-              <time  class="article-updated" datetime="2024-08-20T06:27:32.890Z" itemprop="dateUpdated">2024-08-20</time>
+              <time  class="article-updated" datetime="2024-08-20T06:32:03.179Z" itemprop="dateUpdated">2024-08-20</time>
             </h2>
           
            -->
@@ -191,9 +191,13 @@
 <ul>
 <li>Use a Behavior Tree to construct enemy AI.</li>
 </ul>
+<p>When implementing the enemy AI behavior tree, it first retrieves the player’s current position. The AI then chooses between approaching or attacking the player based on their relative location.</p>
 <img src="https://chao53.github.io/images/ev_bt1.jpg" width="70%" height="70%">
 
+<p>To reduce game difficulty and enhance playability, enemies are assigned a stamina value. Depending on this stamina, the AI chooses between quickly approaching or slowly moving toward the player. Rapid approaches deplete the stamina bar faster. When the stamina is exhausted, the enemy will move towards the player more slowly.</p>
 <img src="https://chao53.github.io/images/ev_bt2.jpg" width="70%" height="70%">
+
+<p>When attacking the player, the enemy AI selects its attack method based on the distance to the player. At long range, it throws boulders; at medium range, it lunges forward; and at close range, it claws or bites. These attacks have several variations, which the AI chooses randomly. Moreover, each attack has its cooldown period to prevent the same action from being repeated too frequently.</p>
 
       </section>
 
