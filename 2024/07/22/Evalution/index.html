@@ -104,7 +104,7 @@
           
             <h2 class="last-time">
               <span>最后更新于</span>
-              <time  class="article-updated" datetime="2024-08-20T03:24:58.582Z" itemprop="dateUpdated">2024-08-20</time>
+              <time  class="article-updated" datetime="2024-08-20T05:43:40.941Z" itemprop="dateUpdated">2024-08-20</time>
             </h2>
           
            -->
@@ -158,7 +158,7 @@
 <li>Scene synchronization technology</li>
 </ul>
 <p>Our project team utilized cloud technology to render high-precision scenes on cloud computers, and then synchronized the local gameplay scenes with the rendering end. This significantly enhanced the game performance.</p>
-<p><img src="/images/ezgif.gif" alt="qq"></p>
+<p><img src="/images/ezgif.gif"></p>
 <h3 id="My-contributions"><a href="#My-contributions" class="headerlink" title="My contributions"></a>My contributions</h3><ul>
 <li>A tag-based skill system</li>
 </ul>
@@ -181,7 +181,7 @@
 <li>The use of animation blending and Aim Offset.</li>
 </ul>
 <p>By dividing the skeleton into upper and lower bodies at the pelvis, I combine an upper body animation of an archer shooting with a lower body locomotion animation. This creates a seamless animation of an archer shooting while moving.</p>
-<p><img src="/images/ev-bl.png"></p>
+<p><img src="/images/ev_bl.png"></p>
 <p>In general, locomotion animations use a blend space to cover various ground movements in four directions. However, for turning-in-place actions, root motion requires montages. Playing a montage can interrupt another, so using UE5’s “Animation Slot Groups” is essential. These slots, when set to different groups, prevent interruptions and allow simultaneous playback of multiple montages. For example, setting the archery montage data on the ‘upper body’ slot and the turning-in-place montage on the ‘lower body’ slot facilitates seamless integration of different body movement animations.</p>
 <p><img src="/images/ev-mt.png"></p>
 <p>When the player’s controller begins to rotate, calculate the difference between the angle of the controller’s rotation and the character’s orientation. If the difference exceeds 90 degrees, trigger the turning montage.</p>
