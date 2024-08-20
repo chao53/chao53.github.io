@@ -24,10 +24,10 @@
       <% if (page.prev || page.next){ %>
         <nav class="article-nav">
           <% if (page.prev) { %>
-            <%- partial("../_widget/article-nav", { page: page.prev, keyword: 'newer' }) %>
+            <%- partial("../_widget/article-nav", { page: page.prev, keyword: 'prev' }) %>
           <% } %>
           <% if (page.next) { %>
-            <%- partial("../_widget/article-nav", { page: page.next, keyword: 'older' }) %>
+            <%- partial("../_widget/article-nav", { page: page.next, keyword: 'next' }) %>
           <% } %>
         </nav>
       <% } %>

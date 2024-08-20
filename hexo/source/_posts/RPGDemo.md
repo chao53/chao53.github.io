@@ -9,6 +9,7 @@ tags:
   - ACT
   - Unity Engine
   - C#
+date: 2024-08-20 16:15:39
 ---
 
 When I first started using the Unity, inspired by Sekiro: Shadows Die Twice, I made a small demo that mimics its combat system. It supports local area network multiplayer battles. I independently completed all gameplay, effects, and networking.

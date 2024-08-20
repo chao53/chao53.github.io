@@ -5,12 +5,12 @@ d1: An action game demo I worked on
 d2: for one year during my internship
 d3: at Tencent.
 top: 10
+category: Highlighted
 tags:
   - AAA
   - Unreal Engine5
   - C++
-
-
+date: 2024-08-20 16:15:44
 ---
 
 
@@ -89,3 +89,25 @@ When the player's controller begins to rotate, calculate the difference between 
 In the character blueprint, check each frame to see if the absolute value of the offset angle is greater than 90 degrees. If it is, enter the rotating state, and depending on whether the value is greater than 0, choose to play either the left-turn or right-turn animation.
 
 ![](images/ev-tr2.png)
+
+
+
+- Use a Behavior Tree to construct enemy AI.
+
+When implementing the enemy AI behavior tree, it first retrieves the player's current position. The AI then chooses between approaching or attacking the player based on their relative location.
+
+<img src="https://chao53.github.io/images/ev_bt1.jpg" width="70%" height="70%">
+
+To reduce game difficulty and enhance playability, enemies are assigned a stamina value. Depending on this stamina, the AI chooses between quickly approaching or slowly moving toward the player. Rapid approaches deplete the stamina bar faster. When the stamina is exhausted, the enemy will move towards the player more slowly.
+
+<img src="https://chao53.github.io/images/ev_bt2.jpg" width="70%" height="70%">
+
+When attacking the player, the enemy AI selects its attack method based on the distance to the player. At long range, it throws boulders; at medium range, it lunges forward; and at close range, it claws or bites. These attacks have several variations, which the AI chooses randomly. Moreover, each attack has its cooldown period to prevent the same action from being repeated too frequently.
+
+
+
+- UI design
+
+The UI system is built using Unreal Engine's Widget Blueprint and a custom UI event system. This setup allows for dynamic changes during gameplay, such as the weapon icon updating when weapons are switched or combos are executed. Similarly, the reticle changes with the bow’s charge time. Health and stamina bars for both the player and the boss are updated in real-time based on data from player and enemy blueprints.
+
+![](images/ev_ui.jpg)
