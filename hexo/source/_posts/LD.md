@@ -1,12 +1,13 @@
 ---
 title: Unstable Reactor
 cover: /unstable_cover.jpg
+top: 6
 d1: A puzzle game I developed within 
 d2: 48 hours while participating in 
 d3: the Ludum Dare game jam.
 tags:
   - Puzzle
-  - Unity
+  - Unity Engine
   - C#
 
 ---

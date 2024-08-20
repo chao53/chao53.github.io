@@ -1,12 +1,13 @@
 ---
 title: Sekirolike Demo
 cover: /sekirolike_cover.png
+top: 5
 d1: Inspired by Sekiro, I created a 
 d2: small demo mimicking its combat 
 d3: system.
 tags:
   - ACT
-  - Unity
+  - Unity Engine
   - C#
 ---
 
