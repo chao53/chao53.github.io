@@ -104,7 +104,7 @@
           
             <h2 class="last-time">
               <span>最后更新于</span>
-              <time  class="article-updated" datetime="2024-08-19T07:56:32.006Z" itemprop="dateUpdated">2024-08-19</time>
+              <time  class="article-updated" datetime="2024-08-20T03:24:58.582Z" itemprop="dateUpdated">2024-08-20</time>
             </h2>
           
            -->
@@ -154,20 +154,40 @@
 
 
 
-<h3 id="Some-technologies-used-in-the-project"><a href="#Some-technologies-used-in-the-project" class="headerlink" title="Some technologies used in the project"></a>Some technologies used in the project</h3><p>Our project team utilized cloud technology to render high-precision scenes on cloud computers, and then synchronized the local gameplay scenes with the rendering end. This significantly enhanced the game performance.</p>
+<h3 id="Some-technologies-used-in-the-project"><a href="#Some-technologies-used-in-the-project" class="headerlink" title="Some technologies used in the project"></a>Some technologies used in the project</h3><ul>
+<li>Scene synchronization technology</li>
+</ul>
+<p>Our project team utilized cloud technology to render high-precision scenes on cloud computers, and then synchronized the local gameplay scenes with the rendering end. This significantly enhanced the game performance.</p>
 <p><img src="/images/ezgif.gif" alt="qq"></p>
-<p>A tag-based skill system I developed.</p>
-<img src="https://chao53.github.io/images/Ev_Ac.jpg" width="50%" height="50%">
+<h3 id="My-contributions"><a href="#My-contributions" class="headerlink" title="My contributions"></a>My contributions</h3><ul>
+<li>A tag-based skill system</li>
+</ul>
+<p>Using animation notify states to configure combo moves, when the animation reaches the notify state window, if an input is received, it will transition to the corresponding new animation.</p>
+<img src="https://chao53.github.io/images/Ev_Ac.jpg" width="70%" height="70%">
 
+<p>.</p>
+<img src="https://chao53.github.io/images/Ev_Ac2.jpg" width="70%" height="70%">
 
-
-<img src="https://chao53.github.io/images/Ev_Ac2.jpg" width="50%" height="50%">
-
-<p>The application of full-body IK (Inverse Kinematics)</p>
+<ul>
+<li>The application of full-body IK (Inverse Kinematics)</li>
+</ul>
 <table><tr>
 <td><img src="https://chao53.github.io/images/ev_ik.png" ></td>
 <td><img src="https://chao53.github.io/images/ev_ik2.png" width="85%" height="85%"></td>
 </tr></table>
+
+
+<ul>
+<li>The use of animation blending and Aim Offset.</li>
+</ul>
+<p>By dividing the skeleton into upper and lower bodies at the pelvis, I combine an upper body animation of an archer shooting with a lower body locomotion animation. This creates a seamless animation of an archer shooting while moving.</p>
+<p><img src="/images/ev-bl.png"></p>
+<p>In general, locomotion animations use a blend space to cover various ground movements in four directions. However, for turning-in-place actions, root motion requires montages. Playing a montage can interrupt another, so using UE5’s “Animation Slot Groups” is essential. These slots, when set to different groups, prevent interruptions and allow simultaneous playback of multiple montages. For example, setting the archery montage data on the ‘upper body’ slot and the turning-in-place montage on the ‘lower body’ slot facilitates seamless integration of different body movement animations.</p>
+<p><img src="/images/ev-mt.png"></p>
+<p>When the player’s controller begins to rotate, calculate the difference between the angle of the controller’s rotation and the character’s orientation. If the difference exceeds 90 degrees, trigger the turning montage.</p>
+<p><img src="/images/ev-tr1.png"></p>
+<p>In the character blueprint, check each frame to see if the absolute value of the offset angle is greater than 90 degrees. If it is, enter the rotating state, and depending on whether the value is greater than 0, choose to play either the left-turn or right-turn animation.</p>
+<p><img src="/images/ev-tr2.png"></p>
 
       </section>
 
@@ -299,7 +319,7 @@
   </div>
   <div class="widget-body">
     <div class="tags-cloud">
-      <a href="/tags/AAA/" style="font-size: 10px;" class="tags-cloud-0">AAA</a> <a href="/tags/ACT/" style="font-size: 10px;" class="tags-cloud-0">ACT</a> <a href="/tags/C/" style="font-size: 20px;" class="tags-cloud-10">C#</a> <a href="/tags/C/" style="font-size: 15px;" class="tags-cloud-5">C++</a> <a href="/tags/Puzzle/" style="font-size: 10px;" class="tags-cloud-0">Puzzle</a> <a href="/tags/Roguelike/" style="font-size: 10px;" class="tags-cloud-0">Roguelike</a> <a href="/tags/Simulation/" style="font-size: 15px;" class="tags-cloud-5">Simulation</a> <a href="/tags/Unity/" style="font-size: 20px;" class="tags-cloud-10">Unity</a> <a href="/tags/Unreal-Engine5/" style="font-size: 15px;" class="tags-cloud-5">Unreal Engine5</a>
+      <a href="/tags/AAA/" style="font-size: 10px;" class="tags-cloud-0">AAA</a> <a href="/tags/ACT/" style="font-size: 10px;" class="tags-cloud-0">ACT</a> <a href="/tags/C/" style="font-size: 20px;" class="tags-cloud-10">C#</a> <a href="/tags/C/" style="font-size: 15px;" class="tags-cloud-5">C++</a> <a href="/tags/Puzzle/" style="font-size: 10px;" class="tags-cloud-0">Puzzle</a> <a href="/tags/Roguelike/" style="font-size: 10px;" class="tags-cloud-0">Roguelike</a> <a href="/tags/Simulation/" style="font-size: 15px;" class="tags-cloud-5">Simulation</a> <a href="/tags/Unity-Engine/" style="font-size: 20px;" class="tags-cloud-10">Unity Engine</a> <a href="/tags/Unreal-Engine5/" style="font-size: 15px;" class="tags-cloud-5">Unreal Engine5</a>
     </div>
   </div>
 </section>
