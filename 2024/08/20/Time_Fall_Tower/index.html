@@ -102,6 +102,11 @@
             <time  class="article-date" datetime="2024-08-20T08:15:43.000Z" itemprop="datePublished">2024-08-20</time>
           </h2>
           
+            <h2 class="last-time">
+              <span>最后更新于</span>
+              <time  class="article-updated" datetime="2024-08-21T06:06:34.157Z" itemprop="dateUpdated">2024-08-21</time>
+            </h2>
+          
            -->
           <ul class="wrap-list dark">
   
@@ -145,17 +150,37 @@
 
 <p>Download this demo:</p>
 <p><a href="https://github.com/chao53/Eric-s-Profile/releases/download/release/TimeFallTower.v1.0.zip">https://github.com/chao53/Eric-s-Profile/releases/download/release/TimeFallTower.v1.0.zip</a></p>
-<h3 id="My-contributions"><a href="#My-contributions" class="headerlink" title="My contributions"></a>My contributions</h3><p><img src="/images/tt_da.jpg"></p>
-<p><img src="/images/tt_to.jpg"></p>
-<p><img src="/images/tt_ex.jpg"></p>
+<h3 id="My-contributions"><a href="#My-contributions" class="headerlink" title="My contributions"></a>My contributions</h3><ul>
+<li>The use of Data Asset</li>
+</ul>
+<p>During the development of this project, I used custom DataAssets to store game data, which includes characters, weapons, enemies, levels, buffs, relics, and synergies. These DataAssets can be accessed directly by runtime scripts. </p>
+<img src="https://chao53.github.io/images/tt_da.jpg" width="50%" height="50%">
+
+<p>Additionally, I wrote a tool that allows for one-click importing of data from Excel spreadsheets into DataAssets. </p>
+<img src="https://chao53.github.io/images/tt_to.jpg" width="70%" height="70%">
+
+<p>This enables our project’s planners to conveniently configure various game data directly within Excel.</p>
+<img src="https://chao53.github.io/images/tt_ex.jpg" width="70%" height="70%">
+
+<p>However, many skill mechanics cannot be implemented through numeric configuration alone. Therefore, I utilized subclass inheritance to realize the special effects of various skills, including buffs, relics, and synergies.</p>
 <table><tr>
 <td><img src="https://chao53.github.io/images/tt_re.jpg" ></td>
-<td><img src="https://chao53.github.io/images/tt_bu.jpg" width="99%" height="99%"></td>
-<td><img src="https://chao53.github.io/images/tt_sy.jpg" width="99%" height="99%"></td>
+<td><img src="https://chao53.github.io/images/tt_bu.jpg" width="80%" height="80%"></td>
+<td><img src="https://chao53.github.io/images/tt_sy.jpg" width="90%" height="90%"></td>
 </tr></table>
+- The use of subclasses
 
+<p>During gameplay, these subclasses are dynamically added as components to the respective gameplay manager. For instance, when a synergy is activated, the synergy subclass component will be added to the synergy manager.</p>
 <p><img src="/images/tt_sy2.jpg"></p>
+<p>So as the relics.</p>
 <p><img src="/images/tt_re2.jpg"></p>
+<p>Finally, the managers collectively trigger the special effects of these subclasses.</p>
+<p><img src="/images/tt_co.jpg"></p>
+<ul>
+<li>Internationalization</li>
+</ul>
+<p>Initially, the game was available only in Chinese, but later I decided to add an English version. Due to the extensive amount of text in the game, I used a keyword replacement method to achieve internationalization. When players decide to switch languages, the program conducts a global search for strings in the game and replaces them with the corresponding language using a dictionary approach.</p>
+<img src="https://chao53.github.io/images/tt_tr.jpg" width="70%" height="70%">
 
       </section>
 
