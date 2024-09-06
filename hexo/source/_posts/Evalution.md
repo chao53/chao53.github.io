@@ -55,6 +55,8 @@ Our project team utilized cloud technology to render high-precision scenes on cl
 
 - A tag-based skill system
 
+I developed an animation system based on gameplay tags and animation notifications, replacing the traditional state machine. It is easier to maintain and expand. This system excels in implementing attack combos and prioritizing hit interrupt actions.
+
 Using animation notify states to configure combo moves, when the animation reaches the notify state window, if an input is received, it will transition to the corresponding new animation.
 
 <img src="https://chao53.github.io/images/Ev_Ac.jpg" width="70%" height="70%">
