@@ -18,7 +18,7 @@ date: 2024-08-20 16:15:40
 
 
 
-This is a small game I developed solo within 48 hours for the Ludum Dare game jam in 2021. In the game, players assume the role of a god of inheritance, starting with three basic elements. These elements can be placed into a reaction pool to alter the environment and generate new elements. Various combinations of elements can produce over seventy different derivatives, including humans and modern technological products. I also incorporated many internet memes of the time to make the game more engaging.
+This is a small game I developed solo within 48 hours for the Ludum Dare game jam in 2021. In the game, players assume the role of a god of inheritance, starting with three basic elements. These elements can be placed into a reaction pool to alter the environment and generate new elements. Various combinations of elements can produce over seventy different derivatives, including humans and modern technological products. I also incorporated many internet memes of the time to make the game more engaging. 
 
 
 
