@@ -12,7 +12,13 @@ tags:
 date: 2024-08-20 16:15:42
 ---
 
+**Project name:** Massive Crowd Simulation
 
+**Date of completion:**  Mar 2, 2023
+
+**Software used:** Unreal Engine5
+
+**My role:** Programmer
 
 This is a demo of a massive crowd simulation involving tens of thousands of entities. Our team developed a rendering engine using DirectX 12, independent of Unreal Engine, which fully utilizes GPU computing power to substitute for CPU in calculating frame data for character animations. This data is then baked into the Unreal Engine scene.
 

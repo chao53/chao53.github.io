@@ -13,7 +13,13 @@ tags:
 date: 2024-08-20 16:15:44
 ---
 
+**Project name:** Evalution
 
+**Date of completion:**  Jan 1, 2023
+
+**Software used:** Unreal Engine5
+
+**My role:** Designer/ Main Programmer
 
 
 

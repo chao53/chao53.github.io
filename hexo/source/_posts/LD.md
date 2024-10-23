@@ -12,9 +12,13 @@ tags:
 date: 2024-08-20 16:15:40
 ---
 
+**Project name:** Unstable Reactor
 
+**Date of completion:**  Oct 2, 2021
 
+**Software used:** Unity
 
+**My role:** Solo developer
 
 
 
