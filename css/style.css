@@ -71,18 +71,18 @@
 }
 @media (prefers-color-scheme: light) {
   :root {
-    --theme-bg-primary: #f5f8fa;
-    --theme-bg-high: #fff;
-    --theme-bg-shadow: #dddfe1;
-    --theme-bg-actvie1: #dddfe1;
-    --theme-bg-actvie2: #fff;
-    --theme-text-active: #f857a6;
-    --theme-text-light: #fff;
-    --theme-text-primary: #3e3e5f;
-    --theme-text-low: #aeacb1;
-    --theme-text-stress: #14281d;
-    --theme-border-primary: #e1e4e8;
-    --theme-border-secondary: #ebedef;
+    --theme-bg-primary: #1e2428;
+    --theme-bg-high: #303a40;
+    --theme-bg-shadow: #0c0e10;
+    --theme-bg-actvie1: #1b2024;
+    --theme-bg-actvie2: #20272b;
+    --theme-text-active: #ca5388;
+    --theme-text-light: #d7dfe6;
+    --theme-text-primary: #adbac7;
+    --theme-text-low: #444c56;
+    --theme-text-stress: #cdd9e5;
+    --theme-border-primary: #444c56;
+    --theme-border-secondary: #373e47;
   }
 }
 @media (prefers-color-scheme: dark) {
