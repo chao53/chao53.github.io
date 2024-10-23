@@ -6,7 +6,7 @@ d1: Inspired by Sekiro, I created a
 d2: small demo mimicking its combat 
 d3: system.
 tags:
-  - ACT
+  - Act
   - Unity Engine
   - C#
 date: 2024-08-20 16:15:39
