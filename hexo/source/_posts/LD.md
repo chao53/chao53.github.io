@@ -2,9 +2,9 @@
 title: Unstable Reactor
 cover: /unstable_cover.jpg
 top: 6
-d1: A puzzle game I developed within 
-d2: 48 hours while participating in 
-d3: the Ludum Dare game jam.
+d1: 我参加Ludum Dare game jam
+d2: 时在48小时内独立开发的一款
+d3: 解谜游戏
 tags:
   - Puzzle
   - Unity Engine
@@ -22,15 +22,12 @@ date: 2024-08-20 16:15:40
 
 
 
-This is a small game I developed solo within 48 hours for the Ludum Dare game jam in 2021. In the game, players assume the role of a god of inheritance, starting with three basic elements. These elements can be placed into a reaction pool to alter the environment and generate new elements. Various combinations of elements can produce over seventy different derivatives, including humans and modern technological products. I also incorporated many internet memes of the time to make the game more engaging.  
+这是我在2021年Ludum  Dare游戏开发大赛中，在48小时内独立开发的一款小型游戏。在游戏中，玩家扮演创世神，从三个基本元素开始。这些元素可以放入反应池中，以改变环境并生成新的元素。各种元素的组合可以产生超过七十种不同的衍生物，包括人类和现代技术产品。我还融入了当时的许多网络迷因，以使游戏更加有趣。
 
+视频:
 
+<iframe width="560" height="315" src="//player.bilibili.com/player.html?bvid=BV1JUP5e3Etv&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
 
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/T6lm4H4WONw?si=suLRzsBBZc10OHJx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
-
-
-Download this demo:
+下载试玩:
 
 https://github.com/chao53/Eric-s-Profile/releases/download/release/Unstable.Reactor.zip

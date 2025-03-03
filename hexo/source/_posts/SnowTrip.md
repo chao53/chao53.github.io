@@ -2,9 +2,9 @@
 title: Snow Trip
 cover: /snowtrip_cover.jpg
 top: 7
-d1: This is a demo I independently 
-d2: created when I first started 
-d3: learning Unity. 
+d1: 我刚开始学习Unity
+d2: 时开发的一个雪地
+d3: 模型游戏。 
 tags:
   - Simulation
   - Unity Engine
@@ -20,10 +20,8 @@ date: 2024-08-20 16:15:41
 
 **My role:** Solo developer
 
-When I first started learning Unity, I participated in a  computer design competition where I created "Snow Trip," a narrative-driven snowmobile simulation game. I independently handled the entire production of the game, including scene editing, vehicle simulation, and mission systems. The project was awarded second prize in the competition.
+我刚开始学习Unity时，我参加了一场计算机设计竞赛，并制作了《Snow Trip》——一款叙事驱动的雪地摩托模拟游戏。我独立完成了游戏的整个制作过程，包括场景编辑、车辆模拟和任务系统。该项目在竞赛中获得了二等奖。
 
+视频：
 
-
-
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/SGqzcNA1Avc?si=hj_QiOQ5QO4gFiEN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="//player.bilibili.com/player.html?bvid=BV1ESP5e6ED6&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
