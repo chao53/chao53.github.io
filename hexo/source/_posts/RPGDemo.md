@@ -12,7 +12,7 @@ tags:
 date: 2024-08-20 16:15:39
 ---
 
-**Project name:** Massive Crowd Simulation
+**Project name:** Sekirolike Demo
 
 **Date of completion:**  Aug 16, 2021
 
