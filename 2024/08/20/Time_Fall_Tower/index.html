@@ -11,7 +11,7 @@
   <meta name="generator" content="Hexo 7.3.0">
 
   
-    <meta name="description" content="Hi! I&#39;m Eric Chen, a game programmer from China. I&#39;ve been making games with the Warcraft III World Editor since I was 12. During my student years, I played numerous games, which inspired me to attend Northeastern University(China). There, I studied Digital Media Technology, a program specifically designed to cultivate professionals for the gaming industry. During my junior year, I completed a one-year internship at Tencent(Massive Entertainment), working as a game developer. After graduating in 2023, I joined the AAA project at Yotta Games, where I have been working as a game developer ever since. Here you can view some demos that I either created or contributed to. Some of them were created as part of my experiments with gaming technology, others were developed during game jams, and some were projects I worked on during my internships. Anyway, I hope you enjoy exploring this content. (^o^)/">
+    <meta name="description" content="你好！我是Eric。我12岁就开始使用《魔兽争霸III》地图编辑器制作游戏。在学生时代，我玩了许多游戏，对游戏的热情促使我进入东北大学就读于数字媒体技术专业，一个专门面向游戏行业的专业。在大三时，我加入腾讯作为游戏开发者工程师实习了一年。2023年毕业后，我加入了Yotta Games的AAA项目，并一直担任游戏开发工程师至今。在这里，你可以查看一些我创作或参与的Demo。有些是我对游戏技术的尝试，有些是在game jam 活动中制作的，还有一些是我在实习期间参与的项目。无论如何，我希望你喜欢这些内容。(^o^)/">
   
 
   
@@ -104,7 +104,7 @@
           
             <h2 class="last-time">
               <span>最后更新于</span>
-              <time  class="article-updated" datetime="2025-05-26T11:11:27.164Z" itemprop="dateUpdated">2025-05-26</time>
+              <time  class="article-updated" datetime="2025-06-10T08:46:23.582Z" itemprop="dateUpdated">2025-06-10</time>
             </h2>
           
            -->
@@ -147,43 +147,44 @@
 <p><strong>Date of completion:</strong>  Sept 4, 2023</p>
 <p><strong>Software used:</strong> Unity</p>
 <p><strong>My role:</strong> Designer&#x2F; Main Programmer</p>
-<p>This is a project I worked on while participating in a mini-game competition. Our development team consisted of six members, and I served as the lead programmer. I was responsible for developing the core framework of the game, which included a highly scalable RPG framework and the specific implementation of many character skills. The gameplay combines the combat and shopping system from Brotato with the synergy system of Auto Chess.</p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/DlvRSxrtf0Y?si=GUG7_o__ZCP7Mt_d" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<p>这是我在参加一场小游戏竞赛时所做的项目。我们的开发团队由六名成员组成，我担任了首席程序员。我负责开发游戏的核心框架，其中包括一个高度可扩展的RPG框架以及许多角色技能的具体实现。游戏玩法结合了《土豆兄弟》的战斗和购物系统，以及自走棋的羁绊系统。</p>
+<p>视频：</p>
+<iframe width="560" height="315" src="//player.bilibili.com/player.html?bvid=BV1JUP5e3Eds&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
 
 
 
-<p>Download this demo:</p>
+<p>下载试玩:</p>
 <p><a href="https://github.com/chao53/Eric-s-Profile/releases/download/release/TimeFallTower.v1.0.zip">https://github.com/chao53/Eric-s-Profile/releases/download/release/TimeFallTower.v1.0.zip</a></p>
-<h3 id="My-contributions"><a href="#My-contributions" class="headerlink" title="My contributions"></a>My contributions</h3><ul>
-<li>The use of Data Asset</li>
+<h3 id="我的贡献"><a href="#我的贡献" class="headerlink" title="我的贡献"></a>我的贡献</h3><ul>
+<li>Data Asset的应用</li>
 </ul>
-<p>During the development of this project, I used custom DataAssets to store game data, which includes characters, weapons, enemies, levels, buffs, relics, and synergies. These DataAssets can be accessed directly by runtime scripts. </p>
+<p>在这个项目的开发过程中，我使用了自定义的DataAssets来存储游戏数据，包括角色、武器、敌人、关卡、增益效果、遗物和协同效果。这些DataAssets可以通过运行时脚本直接访问。</p>
 <img src="https://chao53.github.io/images/tt_da.jpg" width="50%" height="50%">
 
-<p>Additionally, I wrote a tool that allows for one-click importing of data from Excel spreadsheets into DataAssets. </p>
+<p>此外，我还编写了一个工具，可以一键将数据从Excel表格导入到DataAssets中。</p>
 <img src="https://chao53.github.io/images/tt_to.jpg" width="70%" height="70%">
 
-<p>This enables our project’s planners to conveniently configure various game data directly within Excel.</p>
+<p>这使得我们项目的策划人员可以方便地直接在Excel中配置各种游戏数据。</p>
 <img src="https://chao53.github.io/images/tt_ex.jpg" width="70%" height="70%">
 
-<p>However, many skill mechanics cannot be implemented through numeric configuration alone. Therefore, I utilized subclass inheritance to realize the special effects of various skills, including buffs, relics, and synergies.</p>
+<p>然而，许多技能机制无法仅通过数字配置实现。因此，我利用了子类继承来实现各种技能的特效，包括buff效果、遗物和羁绊效果。</p>
 <table><tr>
 <td><img src="https://chao53.github.io/images/tt_re.jpg" ></td>
 <td><img src="https://chao53.github.io/images/tt_bu.jpg" width="80%" height="80%"></td>
 <td><img src="https://chao53.github.io/images/tt_sy.jpg" width="90%" height="90%"></td>
 </tr></table>
-- The use of subclasses
+- 对子类继承的应用
 
-<p>During gameplay, these subclasses are dynamically added as components to the respective gameplay manager. For instance, when a synergy is activated, the synergy subclass component will be added to the synergy manager.</p>
+<p>在游戏过程中，这些子类会作为组件动态地添加到相应的游戏管理器中。例如，当一个协同效果被激活时，羁绊效果子类组件将被添加到协同效果管理器中。</p>
 <p><img src="/images/tt_sy2.jpg"></p>
-<p>So as the relics.</p>
+<p>遗物同理</p>
 <p><img src="/images/tt_re2.jpg"></p>
-<p>Finally, the managers collectively trigger the special effects of these subclasses.</p>
+<p>最后，管理器会共同触发这些子类的特效。</p>
 <p><img src="/images/tt_co.jpg"></p>
 <ul>
-<li>Internationalization</li>
+<li>国际化</li>
 </ul>
-<p>Initially, the game was available only in Chinese, but later I decided to add an English version. Due to the extensive amount of text in the game, I used a keyword replacement method to achieve internationalization. When players decide to switch languages, the program conducts a global search for strings in the game and replaces them with the corresponding language using a dictionary approach.</p>
+<p>最初，游戏仅提供中文版本，但后来我决定添加英文版本。由于游戏中有大量文本，我采用了关键词替换的方法来实现国际化。当玩家决定切换语言时，程序会在游戏中进行全局字符串搜索，并使用字典方法将其替换为相应的语言。</p>
 <img src="https://chao53.github.io/images/tt_tr.jpg" width="50%" height="50%">
 
       </section>
@@ -288,7 +289,7 @@
     <span>NOTICE</span>
   </div>
   <div class="widget-body">
-    <p>Contact me: cchao7490@gmail.com</p>
+    <p>Contact me: 1924525314@qq.com</p>
   </div>
 </section>
 
