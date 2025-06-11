@@ -48,7 +48,7 @@ date: 2024-08-20 16:15:48
 - 点击浏览可以选择一个路径。默认为maya文件同级的Texture文件夹。
 - 点击"用指定路径修复文件引用"即可用上面选择的路径替换掉丢失的路径（前提是选择的路径有效）
 
-![img](E:\PF\chao53.github.io\hexo\source\images\filept2.jpg)
+![img](images\filept2.jpg)
 
 #### 功能2: 将当前文件引用的文件归拢到相对路径
 
@@ -64,7 +64,7 @@ date: 2024-08-20 16:15:48
 
 ## 四、模型检查工具
 
-![img](E:\PF\chao53.github.io\hexo\source\images\check1.jpg)
+![img](images\check1.jpg)
 
 点击check的按钮打开工具
 
@@ -74,9 +74,9 @@ date: 2024-08-20 16:15:48
 
 其作用是配置模型检查标准的细节数据。比如角色设定的身高数据
 
-![img](E:\PF\chao53.github.io\hexo\source\images\check2.jpg)
+![img](images\check2.jpg)
 
-![img](E:\PF\chao53.github.io\hexo\source\images\check3.jpg)
+![img](images\check3.jpg)
 
 如果这些数据有更新，可以点击模型检查工具UI里的 "更新检查标准数据文件"，然后选择新版本的config_data.xlsx 来完成更新。
 
@@ -92,73 +92,73 @@ config_data.xlsx中的相关配置：
 
 表"基本配置" 中的身高检查容差
 
-![img](E:\PF\chao53.github.io\hexo\source\images\tollerant.jpg)
+![img](images\tollerant.jpg)
 
 表"角色身高" 中各个角色的具体身高设定，第一列为角色名，第二列为身高
 
-![img](E:\PF\chao53.github.io\hexo\source\images\check4.jpg)
+![img](images\check4.jpg)
 
 点击检查后，会显示身高差，在容差之内会视为通过
 
-![img](E:\PF\chao53.github.io\hexo\source\images\check5.jpg)
+![img](images\check5.jpg)
 
 注意：带绑定的角色检查的身高会不准确。只适用于未绑定的mesh
 
 ### 2、检测模型是否在地面网格上方
 
-![img](E:\PF\chao53.github.io\hexo\source\images\check6.jpg)
+![img](images\check6.jpg)
 
 检测是否有物体低于地平面
 
 ### 3、模型面数检查工具
 
-![img](E:\PF\chao53.github.io\hexo\source\images\check7.jpg)
+![img](images\check7.jpg)
 
 只能识别按规范命名的模型。
 
 ### 4、检查大于四边面
 
-![img](E:\PF\chao53.github.io\hexo\source\images\check8.jpg)
+![img](images\check8.jpg)
 
 单独检查该项，能选中大于四边的面
 
 ### 5、检查废点废面
 
-![img](E:\PF\chao53.github.io\hexo\source\images\chekc9.jpg)
+![img](images\chekc9.jpg)
 
 单独检查该项，能选中废点废面
 
 ### 6、检查网格体是否左右对称
 
-![img](E:\PF\chao53.github.io\hexo\source\images\check10.jpg)
+![img](images\check10.jpg)
 
 会显示有不对称点的物体。 在X_Tool中能选中这些不对称的点
 
-![img](E:\PF\chao53.github.io\hexo\source\images\check11.jpg)
+![img](images\check11.jpg)
 
 ### 7、检查网格体命名
 
-![img](E:\PF\chao53.github.io\hexo\source\images\check12.jpg)
+![img](images\check12.jpg)
 
 命名规则[Maya 模型命名规范](https://dztkd8r9io.feishu.cn/docx/V7m5dUyNqoFDSFxoAwqcXxnQnhe?from=from_copylink)
 
 ### 8、检查UV集命名
 
-![img](E:\PF\chao53.github.io\hexo\source\images\check13.jpg)
+![img](images\check13.jpg)
 
 只允许有一个叫map1的uv集
 
 ### 9、检查眼球UV是否有反转
 
-![img](E:\PF\chao53.github.io\hexo\source\images\check14bt.jpg)
+![img](images\check14bt.jpg)
 
-![img](E:\PF\chao53.github.io\hexo\source\images\eyeUV.jpg)
+![img](images\eyeUV.jpg)
 
 在uv编辑器里看到是红色的uv就是反转的
 
 ### 10、检查Body的拓扑是否与Metahuman 的Body一致
 
-![img](E:\PF\chao53.github.io\hexo\source\images\Check14.jpg)
+![img](images\Check14.jpg)
 
 ## 五、工作流工具
 
@@ -187,7 +187,7 @@ config_data.xlsx中的相关配置：
 
 如果出现如下图的提示
 
-![img](E:\PF\chao53.github.io\hexo\source\images\svnToolWarn.jpg)
+![img](images\svnToolWarn.jpg)
 
 则需要按以下步骤操作
 
@@ -195,11 +195,11 @@ config_data.xlsx中的相关配置：
 
 2，点击Modify
 
-![img](E:\PF\chao53.github.io\hexo\source\images\svnIns2.jpg)
+![img](images\svnIns2.jpg)
 
 3，command line client tools 这个要选择第一项
 
-![img](E:\PF\chao53.github.io\hexo\source\images\svnIns.jpg)
+![img](images\svnIns.jpg)
 
 4，后面一路默认继续重新安装就行
 
@@ -207,9 +207,9 @@ config_data.xlsx中的相关配置：
 
 ## 六、PoseWrangler Solver 自动化创建工具
 
-![img](E:\PF\chao53.github.io\hexo\source\images\poseTBt.jpg)
+![img](images\poseTBt.jpg)
 
-![img](E:\PF\chao53.github.io\hexo\source\images\pstool.jpg)
+![img](images\pstool.jpg)
 
 ### 1、打开PoseWranger
 
@@ -219,7 +219,7 @@ config_data.xlsx中的相关配置：
 
 会把原有的Solver 全删掉并创建本项目需要的Solvers ， 如下图
 
-![img](E:\PF\chao53.github.io\hexo\source\images\poseWrangler.jpg)
+![img](images\poseWrangler.jpg)
 
 ### 3、重建Solver并保留原有数据
 
@@ -233,13 +233,13 @@ config_data.xlsx中的相关配置：
 
 点击后会根据每个pose 生成BlendShape
 
-![0](E:\PF\chao53.github.io\hexo\source\images\bswin.jpg)
+![0](images\bswin.jpg)
 
 ## 七、实验性工具
 
 ### 1、卡片头发生成工具
 
-![img](E:\PF\chao53.github.io\hexo\source\images\GHBut.jpg)
+![img](images\GHBut.jpg)
 
-![img](E:\PF\chao53.github.io\hexo\source\images\XGen.jpg)
+![img](images\XGen.jpg)
 
