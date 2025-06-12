@@ -68,7 +68,9 @@ date: 2024-08-20 16:15:48
 
 点击check的按钮打开工具
 
+视频:
 
+maya_modelcheck
 
 模型检查工具中的第一栏会显示工具检查标准的更新时间，工具检查标准即为X_TOOL目录下的config_data.xlsx
 
@@ -166,7 +168,7 @@ config_data.xlsx中的相关配置：
 
 视频：
 
-
+maya_SVN
 
 会重命名部件与部件的第一个材质
 
@@ -242,4 +244,6 @@ config_data.xlsx中的相关配置：
 ![img](images\GHBut.jpg)
 
 ![img](images\XGen.jpg)
+
+视频:maya_XGenCard
 
