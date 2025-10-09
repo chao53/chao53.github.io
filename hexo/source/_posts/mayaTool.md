@@ -1,12 +1,12 @@
 ---
 title: Maya系列工具
-cover: /crowed_cover.png
+cover: /mayaTool_cover.jpg
 top: 11
 d1: 包括模型检查,美术生
 d2: 产流水线,自动化生成
 d3: 和实用功能等工具
 tags:
-  - DCCTool
+  - Tool
   - Maya
   - Python
   - Mel

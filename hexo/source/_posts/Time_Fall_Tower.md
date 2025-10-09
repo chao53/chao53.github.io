@@ -7,7 +7,7 @@ d2: 比赛时开发的一个
 d3: 肉鸽游戏
 category: Highlighted
 tags: 
-  - Roguelike
+  - Game
   - Unity Engine
   - C#
 date: 2024-08-20 16:15:43
