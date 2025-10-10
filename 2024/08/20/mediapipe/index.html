@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="theme-color" content="#3367D6"/>
+  <link rel="apple-touch-icon" href="/icons-192.png">
+  <link rel="manifest" href="/manifest.json">
+  
+  <meta name="generator" content="Hexo 7.3.0">
+
+  
+    <meta name="description" content="我毕业于东北大学数字媒体技术专业，曾在腾讯，友塔游戏，听潮阁工作过，职位为偏工具向的游戏开发。我热爱游戏，有上万小时的游戏时间。在业余时间我参与过许多gamejam或独游项目。技术栈为 C++,python, UE5, unity。这个网站里展示了我参与或独立开发的一些游戏项目，还有我在工作中开发的一些提效工具。">
+  
+
+  
+
+  
+    <meta name="author" content="Eric Chen">
+  
+
+  
+
+  
+
+  <title>UE5单镜头手势识别 | Eric Chen - Game Programming &amp; Design Portfolio</title>
+
+  
+
+  
+    <link rel="shortcut icon" href="/profile.jfif">
+  
+
+  <!--mathjax latex数学公式显示支持-->
+  
+  
+
+  
+
+  
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+</head>
+<body>
+  <div class="root-container">
+    
+<!-- header container -->
+<header class="header-container post">
+  
+    <div class="post-image" style="background-image: url(/MP_conver.jpg)"></div>
+  
+
+  <!-- navbar -->
+<nav class="navbar">
+  <div class="navbar-content">
+    <!-- logo -->
+    <div class="navbar-logo">
+      <a href="/">
+        
+          Eric Chen - Game Programming &amp; Design Portfolio
+        
+      </a>
+    </div>
+    <!-- link -->
+    <div class="navbar-link">
+      <div class="navbar-btn">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <ul class="navbar-list">
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+    <div class="header-content2">
+      <div class="post-text layout-block">
+        <div class="layout-margin">
+          <h1 class="title-wrap">UE5单镜头手势识别</h1>
+          <!-- <h2 class="title-sub-wrap">
+            <strong>Eric Chen</strong>
+            <span>发布于</span>
+            <time  class="article-date" datetime="2024-08-20T08:15:48.000Z" itemprop="datePublished">2024-08-20</time>
+          </h2>
+          
+            <h2 class="last-time">
+              <span>最后更新于</span>
+              <time  class="article-updated" datetime="2025-10-10T07:05:16.958Z" itemprop="dateUpdated">2025-10-10</time>
+            </h2>
+          
+           -->
+          <ul class="wrap-list dark">
+  
+</ul>
+          <ul class="wrap-list dark">
+  
+    <li><a href="/tags/C/">🏷️ C++</a></li>
+  
+    <li><a href="/tags/Python/">🏷️ Python</a></li>
+  
+    <li><a href="/tags/UE5/">🏷️ UE5</a></li>
+  
+</ul>
+        </div>
+      </div>
+    </div>
+  
+
+  
+  
+  
+</header>
+
+    <!-- 文章 -->
+
+<!-- 文章内容 -->
+<div class="body-container">
+  <article class="content-container layout-block post-container">
+    <div class="article-info">
+      
+      
+      
+      
+      <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
+        <h2 id="最终效果展示"><a href="#最终效果展示" class="headerlink" title="最终效果展示"></a>最终效果展示</h2><p>集成为了一个UE5的plugin, 能方便的移植到各种项目</p>
+<p>视频：<br>驱动骨骼</p>
+<iframe width="560" height="315" src="//player.bilibili.com/player.html?isOutside=true&aid=115348510613030&bvid=BV1qC47zcEiW&cid=32962577912&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+
+<p>手势识别纠正</p>
+<iframe width="560" height="315" src="//player.bilibili.com/player.html?isOutside=true&aid=115348577721536&bvid=BV16q47zNEL7&cid=32963103410&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+
+
+
+<p>架构设计</p>
+<p><img src="/images%5CmediapipePipeLine.jpg" alt="mediapipePipeLine"></p>
+<p>UE5端通信总管HandDataReceiver  </p>
+<h2 id="实现详解"><a href="#实现详解" class="headerlink" title="实现详解"></a>实现详解</h2><h4 id="一、-MediaPipe-本地部署并打包成-exe"><a href="#一、-MediaPipe-本地部署并打包成-exe" class="headerlink" title="一、 MediaPipe 本地部署并打包成 .exe"></a>一、 MediaPipe 本地部署并打包成 .exe</h4><p>摆脱对用户本地Python环境的依赖</p>
+<ol>
+<li><p><strong>选择嵌入式Python：</strong> 使用Python官方的 <strong>Embeddable Package</strong>，这是一个轻量级的、绿色的Python运行时。</p>
+</li>
+<li><p><strong>依赖注入：</strong> 通过 get-pip.py 为这个嵌入式环境安装 pip，然后精确地安装 mediapipe 和 opencv-python 两个核心依赖库。</p>
+</li>
+<li><p><strong>最终打包：</strong> 使用 <strong>PyInstaller</strong> 将整个Python应用（包含脚本和所有依赖）打包成一个独立的 <strong>.exe</strong> 文件。这不仅封装了所有依赖，还隐藏了源码，并允许通过命令行参数向其传递配置信息（如端口号）。</p>
+</li>
+<li><p><strong>UE集成：</strong> 在插件的 Build.cs 文件中，通过配置 <strong>RuntimeDependencies</strong>，实现了在UE项目打包时，能自动将此 .exe 文件包含到最终的游戏目录中。</p>
+<p><img src="/images%5Cmpexe.jpg" alt="mpexe"></p>
+</li>
+</ol>
+<h4 id="二、-构建UE5端数据接收层-AX-HandDataReceiverActor"><a href="#二、-构建UE5端数据接收层-AX-HandDataReceiverActor" class="headerlink" title="二、 构建UE5端数据接收层 (AX_HandDataReceiverActor)"></a>二、 构建UE5端数据接收层 (AX_HandDataReceiverActor)</h4><p>在不影响游戏性能的前提下，稳定地接收高频数据，并优雅地管理外部进程</p>
+<ol>
+<li><strong>进程管理与动态端口：</strong><ul>
+<li>在C++中，通过 FPlatformProcess::CreateProc 启动 .exe。</li>
+<li>为了避免端口冲突，UE端首先在<strong>端口0</strong>上创建UDP Socket，操作系统会自动为其分配一个未被占用的端口。然后，这个<strong>动态分配的端口号</strong>被作为命令行参数传递给启动的 .exe 进程。这保证了系统在任何环境下都能稳定建立通信。</li>
+</ul>
+</li>
+<li><strong>多线程网络接收：</strong><ul>
+<li>利用UE的 FUdpSocketReceiver，将UDP数据的接收和等待操作放在一个<strong>独立的后台线程</strong>中执行。这彻底避免了网络IO阻塞游戏主线程，保证了游戏的流畅运行。</li>
+</ul>
+</li>
+<li><strong>线程安全的数据交换：</strong><ul>
+<li>后台线程接收到数据后，通过 AsyncTask(ENamedThreads::GameThread, …) 异步任务，将解析好的数据<strong>安全地派发</strong>回游戏主线程。这是UE中进行多线程编程的标准、安全实践。</li>
+</ul>
+</li>
+<li><strong>健壮的路径管理：</strong><ul>
+<li>为了解决了打包后找不到 .exe 的经典难题。通过C++预处理宏 #if WITH_EDITOR 区分编辑器和打包模式，并使用 FPaths::ConvertRelativePathToFull 将相对路径转换为绝对路径，确保了在任何启动环境下都能准确定位 .exe 文件。</li>
+</ul>
+</li>
+</ol>
+<h4 id="三、-解析数据并驱动骨骼-自定义-AnimNode"><a href="#三、-解析数据并驱动骨骼-自定义-AnimNode" class="headerlink" title="三、 解析数据并驱动骨骼 (自定义 AnimNode)"></a>三、 解析数据并驱动骨骼 (自定义 AnimNode)</h4><p>将离散的3D坐标点，转化为平滑、连续且符合骨骼层级结构的旋转动画</p>
+<ol>
+<li><strong>封装算法：</strong> 没有在动画蓝图的事件图表中用连线堆砌复杂的数学逻辑，而是创建了一个名为 <strong>FAnimNode_HandPoseFromLandmarks</strong> 的C++自定义动画节点。这使得动画蓝图异常整洁，所有复杂的计算都被封装在C++层。</li>
+<li><strong>坐标空间变换：</strong> 这是驱动骨骼的核心。所有计算都在正确的坐标空间中进行：<ul>
+<li>从 HandData（组件空间）获取landmark点。</li>
+<li>获取每个骨骼的父骨骼在组件空间的变换 ParentTransform_CS。</li>
+<li>计算出目标方向向量 TargetDirection_CS。</li>
+<li>计算出骨骼在参考姿态（T-Pose）下的方向 RefDirection_CS。</li>
+<li>计算出从参考方向到目标方向的<strong>旋转增量（Delta Rotation）</strong>。</li>
+<li>将此增量正确地应用到骨骼的<strong>局部空间（Local Space）</strong>变换中。</li>
+</ul>
+</li>
+<li><strong>解决万向节死锁（Roll轴旋转丢失）：</strong><ul>
+<li><strong>[关键突破]</strong> 意识到 FQuat::FindBetweenNormals 只能计算最短旋转路径，会丢失绕主轴的“扭转&#x2F;Roll”信息，导致手腕X轴无法旋转。</li>
+<li>解决方案是利用<strong>三个关键点</strong>（如手腕、中指根、小指根）来定义一个<strong>完整的3D坐标系</strong>（Forward, Right, Up向量），而不仅仅是一个方向向量。</li>
+<li>通过这个坐标系构建一个无歧义的<strong>目标旋转矩阵&#x2F;四元数</strong>，从而计算出包含完整Pitch, Yaw, 和Roll信息的旋转增量，完美解决了该问题。</li>
+</ul>
+</li>
+</ol>
+<p>​	</p>
+<h4 id="四、-数据提纯与优化"><a href="#四、-数据提纯与优化" class="headerlink" title="四、 数据提纯与优化"></a>四、 数据提纯与优化</h4><p>从抖动、噪声丰富、甚至偶尔完全错误的 MediaPipe 数据中，提取出平滑、自然且符合生物力学的人体动作，同时如何避免“过度滤波”带来的响应迟滞</p>
+<p>设计了一套多层次、逐步深入的数据净化管道。该管道从最粗粒度的“可信度”判断开始，到最细微的动画平滑结束，确保每一帧输出的姿态都是稳定且合理的。</p>
+<h4 id="1-置信度门槛（Confidence-Gating）"><a href="#1-置信度门槛（Confidence-Gating）" class="headerlink" title="1. 置信度门槛（Confidence Gating）"></a>1. 置信度门槛（Confidence Gating）</h4><p>MediaPipe 在进行推断时，会为检测到的每一只手提供一个<strong>置信度分数（0.0 - 1.0）</strong>。当手部姿态清晰时，分数很高（&gt;0.9）；当手掌正对&#x2F;背对镜头导致姿态模糊时，分数会显著下降。利用这个分数作为数据质量的<strong>第一道关卡</strong>。</p>
+<ul>
+<li><strong>实现方式：</strong><ul>
+<li><strong>数据采集端（Python）</strong>：将 MediaPipe 输出的置信度分数与 landmark 坐标、左右手标签一同打包成 JSON，完整地发送给 Unreal Engine。</li>
+<li><strong>数据接收端（C++ AnimNode）</strong>：在动画节点 FAnimNode_HandPoseFromLandmarks 中，引入了一个可配置的 ConfidenceThreshold（置信度阈值）参数。</li>
+<li><strong>过滤逻辑：</strong> 在 Evaluate_AnyThread 函数的<strong>最开始</strong>，会检查传入的手部数据的置信度。如果分数<strong>低于</strong>设定的阈值，会认为这帧数据是<strong>不可靠的“坏数据”</strong>。节点将<strong>完全丢弃</strong>这帧数据，并直接输出上游传入的基础姿态（BasePose），使模型手部恢复到默认或由其他动画驱动的姿态。</li>
+</ul>
+</li>
+<li><strong>优势：</strong><ul>
+<li><strong>从源头拦截错误：</strong> 能有效防止因姿态识别困难（如手掌平放）导致的模型严重扭曲或“灵异”跳变。</li>
+<li><strong>用户可控：</strong> 开发者可以直接在动画蓝图的细节面板中实时调整阈值，以在<strong>响应灵敏度</strong>和<strong>姿态稳定性</strong>之间找到最佳平衡。</li>
+</ul>
+</li>
+</ul>
+<h4 id="2-双阶段平滑机制（平滑处理）"><a href="#2-双阶段平滑机制（平滑处理）" class="headerlink" title="2. 双阶段平滑机制（平滑处理）"></a>2. 双阶段平滑机制（平滑处理）</h4><p>在数据通过了置信度门槛，被确认为“可信”之后，对其进行双重平滑处理，以消除高频抖动。</p>
+<ul>
+<li><strong>阶段一（预处理平滑）</strong>：<ul>
+<li>在 FAnimNode_HandPoseFromLandmarks 中，接收到 landmark 数据后，首先进行一次轻度的 <strong>指数滑动平均（EMA）</strong> 平滑。</li>
+<li>使用自定义函数 GetSmoothedPoint()，对每个 landmark 的历史值做权重衰减式滤波。</li>
+<li>可通过 PreSmoothingAlpha 参数控制响应程度，数值越小越平滑，越大则越灵敏。</li>
+</ul>
+</li>
+<li><strong>阶段二（动画应用平滑）</strong>：<ul>
+<li>在 FAnimNode_HandPoseFromLandmarks::Evaluate_AnyThread 中，每一个骨骼的最终局部旋转都会与上一次的结果进行 <strong>Slerp（球面线性插值）</strong> 平滑。</li>
+<li>这一层主要用于防止骨骼旋转的<strong>视觉跳变</strong>，尤其适用于动画系统中的 “惯性补偿”。</li>
+<li>通过 PostSmoothingAlpha 参数配置插值比例，提供用户级别的动画细节控制。</li>
+</ul>
+</li>
+</ul>
+<h4 id="3-生物力学约束"><a href="#3-生物力学约束" class="headerlink" title="3. 生物力学约束"></a>3. 生物力学约束</h4><p>为了让模型的动作更符合真实人体，对计算出的旋转施加了基于解剖结构的约束。</p>
+<ul>
+<li><strong>防止手指反向弯曲：</strong><ul>
+<li>MediaPipe 并不会主动判断手指弯曲的方向。</li>
+<li>在第二与第三节指关节（PIP 和 DIP）上，实现了基于<strong>旋转分解与角度限制</strong>的约束。</li>
+<li>将指关节的旋转增量分解为“摆动（Swing）”和“扭转（Twist）”两部分。丢弃扭转，然后计算出摆动的角度，并使用 FMath::Clamp 将其夹紧在一个符合生理的范围内（如 [-5°, 90°]），从而根除了手指向后翻的错误。</li>
+</ul>
+</li>
+</ul>
+<h4 id="4-性能与开发辅助"><a href="#4-性能与开发辅助" class="headerlink" title="4. 性能与开发辅助"></a>4. 性能与开发辅助</h4><ul>
+<li><strong>动态数据复用与缓存：</strong><ul>
+<li>使用 TMap 缓存骨骼的组件空间变换结果，避免在单次 Evaluate 调用中对同一骨骼进行重复的坐标空间转换，提升运行效率。</li>
+</ul>
+</li>
+<li><strong>原始数据直通模式（开发辅助）：</strong><ul>
+<li>提供 UseOriginData 开关，允许开发者绕过任何平滑、约束或限制，直接观察 MediaPipe 输出在模型上的原始映射效果。</li>
+<li>该模式特别适用于调试 landmark 方向、坐标轴映射和手指弯曲逻辑等底层问题。</li>
+</ul>
+</li>
+</ul>
+<p><img src="/images%5CMediaPipeABP.jpg" alt="MediaPipeABP"></p>
+<h3 id="五、手势识别纠正"><a href="#五、手势识别纠正" class="headerlink" title="五、手势识别纠正"></a>五、手势识别纠正</h3><p>训练一个能识别自定义的、独一无二的手势（如数字0-9、比心等）的高性能模型，并根据识别的手势，纠正动画</p>
+<p>利用 <strong>Google Colab</strong> 的云端计算能力和 <strong>MediaPipe Model Maker</strong> 的迁移学习技术，实现了从数据采集到模型部署的全过程。</p>
+<h4 id="1-数据集工程化：高质量数据的采集与处理"><a href="#1-数据集工程化：高质量数据的采集与处理" class="headerlink" title="1. 数据集工程化：高质量数据的采集与处理"></a>1. 数据集工程化：高质量数据的采集与处理</h4><p>深刻理解“数据决定模型上限”的原则，因此在数据准备阶段投入了大量精力，确保了数据集的<strong>多样性</strong>和<strong>质量</strong>。</p>
+<ul>
+<li><p><strong>自动化数据采集</strong>:</p>
+<ul>
+<li><p>编写了一个功能强大的 <strong>Python 批量处理脚本</strong>。该脚本能自动遍历指定文件夹下的所有视频文件（.mp4, .mov 等）。</p>
+</li>
+<li><p>对于每个视频，脚本会自动创建一个与视频文件名同名的文件夹，并以固定的帧率（可配置）从中提取图片。</p>
+<p><img src="/images%5CGestureTrain.jpg" alt="GestureTrain"></p>
+</li>
+</ul>
+</li>
+<li><p><strong>构建多样化数据集</strong>:</p>
+<ul>
+<li>为<strong>数字0到9</strong>、<strong>点赞</strong>、<strong>比心</strong>等十余种自定义手势，以及一个至关重要的<strong>none（非手势）</strong>类别，分别录制了视频。</li>
+<li>采集过程充分考虑了多样性，涵盖了<strong>不同的人物、角度、光照和背景</strong>，以增强模型的泛化能力。</li>
+<li>特别是 none 类别，采集了大量手部在移动、放松、以及手势切换过程中的“中间态”图片，以训练模型在非交互状态下保持“沉默”，避免误识别。</li>
+</ul>
+</li>
+</ul>
+<h4 id="2-云端训练：利用-MediaPipe-Model-Maker-实现高效迁移学习"><a href="#2-云端训练：利用-MediaPipe-Model-Maker-实现高效迁移学习" class="headerlink" title="2. 云端训练：利用 MediaPipe Model Maker 实现高效迁移学习"></a>2. 云端训练：利用 MediaPipe Model Maker 实现高效迁移学习</h4><p>在本地配置复杂的深度学习环境（CUDA, cuDNN）既耗时又容易出错，且对硬件要求高。</p>
+<p>于是将整个训练流程迁移到了 <strong>Google Colab</strong> 云端平台。</p>
+<ul>
+<li><p><strong>环境零配置</strong>: 直接利用 Colab 预置的、带免费 GPU 加速的 Python 环境，无需任何本地安装。</p>
+</li>
+<li><p><strong>稳定的数据流</strong>: 为了解决 Colab 上传大文件时容易中断的问题，采用了<strong>“Google Drive 中转”</strong>的方案：先将打包好的数据集 .zip 文件上传到 Google Drive，然后在 Colab 中挂载 Drive，并高速复制到本地环境再解压。这套流程被证明是极其稳定和高效的。</p>
+</li>
+<li><p><strong>迁移学习</strong>: 没有从零开始训练模型。<strong>MediaPipe Model Maker</strong> 在后台自动加载了 Google 预训练的、强大的<strong>手部特征提取基础模型</strong>，只需在其之上，用自己的数据集来微调（Fine-tuning）一个全新的、为自定义手势量身定做的分类头。这使得训练过程不仅速度飞快（通常在十几分钟内完成），而且模型起点高，准确率非常有保障。</p>
+<p><img src="/images%5CGoogleTrain.jpg" alt="GoogleTrain"></p>
+</li>
+</ul>
+<h4 id="3-端到端部署与交互"><a href="#3-端到端部署与交互" class="headerlink" title="3. 端到端部署与交互"></a>3. 端到端部署与交互</h4><p>训练完成后，将定制化的 .task 模型集成回的系统中，打通了从识别到交互的最后一环。</p>
+<ul>
+<li><p><strong>Python 端升级</strong>:</p>
+<ul>
+<li>将原有的 Hands 模型完全替换为新的、功能更强大的 <strong>GestureRecognizer</strong>。它不仅能提供与之前完全一致的坐标、左右手标签和置信度数据，还额外输出了刚刚训练的<strong>自定义手势标签</strong>（如 “Thumb_Up”, “Heart”, “One”, “Two” 等）。</li>
+<li>所有这些信息被实时打包成 JSON，通过 UDP 发送给 UE。</li>
+</ul>
+</li>
+<li><p><strong>UE 端接收与响应</strong>:</p>
+<ul>
+<li><p>C++ AX_HandDataReceiverActor 负责解析新增的 Gesture 字段。</p>
+</li>
+<li><p>在动画蓝图或行为树中，可以轻松地获取到这个手势字符串，并用一个简单的 Switch on String 节点来分发逻辑。</p>
+</li>
+</ul>
+</li>
+</ul>
+<p><img src="/images%5CMP_train.jpg" alt="MP_train"></p>
+
+      </section>
+
+      
+      
+        <nav class="article-nav">
+          
+            <div class="article-nav-item layout-padding">
+  <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
+    
+      <div class="card-cover" background-image-lazy data-img="/mayaTool_cover.jpg"></div>
+    
+    <div class="card-text">
+      
+        <a href="/2024/08/20/mayaTool/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">Maya系列工具</h2>
+        </a>
+      
+      <div class="card-text--row">Prev</div>
+    </div>
+  </article>
+</div>
+          
+          
+            <div class="article-nav-item layout-padding">
+  <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
+    
+      <div class="card-cover" background-image-lazy data-img="/banner.jpg"></div>
+    
+    <div class="card-text">
+      
+        <a href="/2024/08/20/SVNUELauncher/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">UE SVN 启动器</h2>
+        </a>
+      
+      <div class="card-text--row">Next</div>
+    </div>
+  </article>
+</div>
+          
+        </nav>
+      
+
+      <section class="page-message-container layout-padding">
+        
+
+
+  
+  
+
+  
+  
+
+
+      </section>
+    </div>
+    <div class="widget-info">
+      <section class="widget-author widget-item layout-margin content-padding--primary soft-size--large soft-style--box">
+  <div class="widget-body">
+    
+      <img src="/profile.jfif" class="soft-size--round soft-style--box" alt="Eric Chan">
+    
+    
+      <h2>Eric Chan</h2>
+    
+    
+      <p>This website is about some video game demos I&#39;ve created over the past few years.</p>
+    
+
+    <div class="count-box">
+      <div class="count-box--item">
+        <svg class="icon icon-article" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M240.51564747 647.74217627h196.07203239c16.59071043 0 30.16492806-13.57421762 30.16492805-30.16492806V165.10332731c0-33.18142087-30.16492806-60.32985613-60.32985612-60.32985611H245.04038668C225.43318342 104.7734712 210.35071939 119.85593522 210.35071939 139.46313845V617.57724821c0 16.59071043 13.57421762 30.16492806 30.16492808 30.16492806z m663.62841731-452.47392089v482.63884894c0 33.18142087-27.14843525 60.32985613-60.32985612 60.32985613H180.18579134c-33.18142087 0-60.32985613-27.14843525-60.32985612-60.32985613V195.26825538c-49.77213131 0-90.49478418 40.72265287-90.49478417 90.49478417v452.4739209c0 49.77213131 40.72265287 90.49478418 90.49478417 90.49478417h286.56681657c16.59071043 0 30.16492806 13.57421762 30.16492807 30.16492807s13.57421762 30.16492806 30.16492805 30.16492806h90.49478418c16.59071043 0 30.16492806-13.57421762 30.16492805-30.16492806s13.57421762-30.16492806 30.16492807-30.16492807h286.56681657c49.77213131 0 90.49478418-40.72265287 90.49478417-90.49478417V285.76303955c0-49.77213131-40.72265287-90.49478418-90.49478417-90.49478417zM587.41232014 647.74217627h191.54729318c19.60720323 0 34.68966726-15.08246403 34.68966729-34.68966727V134.93839925c0-16.59071043-13.57421762-30.16492806-30.16492808-30.16492805H617.57724821c-30.16492806 0-60.32985613 27.14843525-60.32985612 60.32985611v452.4739209c0 16.59071043 13.57421762 30.16492806 30.16492805 30.16492806z" fill="currentColor"></path>
+</svg>
+        <span>8</span>
+      </div>
+      <div class="count-box--item">
+        <svg class="icon icon-categories" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M900.3614811 257.09082106h-339.81629553l-67.96326003-101.9448889c-19.41807444-29.12711113-48.54518557-43.69066667-82.52681443-43.69066667H123.6385189c-53.39970333 0-97.09036999 43.69066667-97.09037113 97.09036999v582.54222222c0 53.39970333 43.69066667 97.09036999 97.09037113 97.09037002h776.7229622c53.39970333 0 97.09036999-43.69066667 97.09037113-97.09037002V354.18119104c0-53.39970333-43.69066667-97.09036999-97.09037113-97.09036998z m-97.09036999 242.72592554H220.72888889c-24.27259221 0-48.54518557-24.27259221-48.54518556-48.54518556s24.27259221-48.54518557 48.54518556-48.54518444h582.54222222c24.27259221 0 48.54518557 24.27259221 48.54518556 48.54518444s-24.27259221 48.54518557-48.54518556 48.54518556z" fill="currentColor"></path>
+</svg>
+        1
+      </div>
+      <div class="count-box--item">
+        <svg class="icon icon-tags" viewBox="0 0 1098 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M283.42180005 272q0-28.38857157-20.09142843-48.48000001t-48.47999998-20.09142842-48.48000002 20.09142842-20.09142846 48.48000001 20.09142846 48.48 48.48000002 20.09142843 48.47999998-20.09142843 20.09142843-48.48zM855.0332285 580.57142843q0 28.38857157-19.81714313 48.2057147l-263.03999997 263.58857157q-20.9142853 19.81714313-48.75428534 19.81714312-28.38857157 0-48.20571468-19.81714312l-383.04-383.58857157q-20.36571468-19.81714313-34.55999999-54.10285688t-14.19428534-62.6742853l0-222.85714313q0-27.84000002 20.36571469-48.20571469t48.2057147-20.36571466l222.85714313 0q28.38857157 0 62.6742853 14.19428529t54.65142842 34.55999999l383.04000001 382.49142843q19.81714313 20.9142853 19.81714314 48.75428532zM1060.74751475 580.57142843q0 28.38857157-19.81714313 48.2057147l-263.04 263.58857157q-20.9142853 19.81714313-48.75428531 19.81714312-19.26857155 0-31.61142843-7.47428531t-28.38857159-24.13714314l251.79428534-251.7942853q19.81714313-19.81714313 19.81714308-48.20571469 0-27.84000002-19.81714308-48.75428531l-383.04000001-382.49142845q-20.36571468-20.36571468-54.65142842-34.55999999t-62.67428532-14.19428534l120 0q28.38857157 0 62.67428532 14.19428534t54.65142842 34.55999999l383.03999998 382.49142845q19.81714313 20.9142853 19.81714314 48.75428531z" fill="currentColor"></path>
+</svg>
+        9
+      </div>
+    </div>
+  </div>
+</section>
+
+      
+
+      
+<section class="widet-notice widget-item layout-margin content-padding--primary soft-size--large soft-style--box">
+  <div class="widget-title">
+    <svg class="icon icon-notice" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M512 945.02305225v28.15620663a24.27259221 24.27259221 0 0 1-24.27259221 24.27259335H394.0352a48.54518557 48.54518557 0 0 1-41.74885888-23.78714112l-110.68302222-184.47170332a132.04290333 132.04290333 0 0 1-17.47626667-48.54518557h118.4502511a200.97706667 200.97706667 0 0 1 76.21594113 14.56355556l20.38897777 133.49925888a48.54518557 48.54518557 0 0 0 36.40888888 27.67075555l16.01991111 2.91271112a24.27259221 24.27259221 0 0 1 20.38897778 25.72894889zM997.45185223 463.45481443a194.18074112 194.18074112 0 0 1-38.8361489 116.50844445 24.75804445 24.75804445 0 0 1-36.4088889 0l-34.95253333-34.95253333a24.27259221 24.27259221 0 0 1-2.91271111-30.58346667 97.09036999 97.09036999 0 0 0 0-106.79940665 24.27259221 24.27259221 0 0 1 2.91271111-30.58346666l34.95253333-34.95253334a24.75804445 24.75804445 0 0 1 18.93262223-7.28177777 26.2144 26.2144 0 0 1 17.47626667 9.70903665A194.18074112 194.18074112 0 0 1 997.45185223 463.45481443z m-194.18074112-388.36148111v776.72296335a48.54518557 48.54518557 0 0 1-48.54518556 48.54518443h-28.64165888a48.54518557 48.54518557 0 0 1-33.98163001-14.07810332l-145.63555556-143.20829668A291.27111111 291.27111111 0 0 0 342.57730333 657.63555556H172.18370333a145.63555556 145.63555556 0 0 1-145.63555556-145.63555556v-97.09036999a145.63555556 145.63555556 0 0 1 145.63555556-145.63555556h170.3936a291.27111111 291.27111111 0 0 0 206.31703779-85.43952668l145.63555555-143.20829554a48.54518557 48.54518557 0 0 1 33.98162888-14.07810446H754.72592555a48.54518557 48.54518557 0 0 1 48.54518556 48.54518555z" fill="currentColor"></path>
+</svg>
+    <span>NOTICE</span>
+  </div>
+  <div class="widget-body">
+    <p>Contact me: 1924525314@qq.com</p>
+  </div>
+</section>
+
+
+      <section class="widget-categories widget-item layout-margin content-padding--primary soft-size--large soft-style--box">
+  <div class="widget-title">
+    <svg class="icon icon-categories" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M900.3614811 257.09082106h-339.81629553l-67.96326003-101.9448889c-19.41807444-29.12711113-48.54518557-43.69066667-82.52681443-43.69066667H123.6385189c-53.39970333 0-97.09036999 43.69066667-97.09037113 97.09036999v582.54222222c0 53.39970333 43.69066667 97.09036999 97.09037113 97.09037002h776.7229622c53.39970333 0 97.09036999-43.69066667 97.09037113-97.09037002V354.18119104c0-53.39970333-43.69066667-97.09036999-97.09037113-97.09036998z m-97.09036999 242.72592554H220.72888889c-24.27259221 0-48.54518557-24.27259221-48.54518556-48.54518556s24.27259221-48.54518557 48.54518556-48.54518444h582.54222222c24.27259221 0 48.54518557 24.27259221 48.54518556 48.54518444s-24.27259221 48.54518557-48.54518556 48.54518556z" fill="currentColor"></path>
+</svg>
+      <span>CATEGORIES</span>
+  </div>
+  <div class="widget-body">
+    <ul class="categories-list">
+      
+        <li class="categories-list-item">
+          <a href="/categories/Highlighted/">
+            Highlighted (2)
+          </a>
+        </li>
+        
+    </ul>
+  </div>
+</section>
+
+      <section class="widget-tags widget-item  layout-margin content-padding--primary soft-size--large soft-style--box">
+  <div class="widget-title">
+    <svg class="icon icon-tags" viewBox="0 0 1098 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M283.42180005 272q0-28.38857157-20.09142843-48.48000001t-48.47999998-20.09142842-48.48000002 20.09142842-20.09142846 48.48000001 20.09142846 48.48 48.48000002 20.09142843 48.47999998-20.09142843 20.09142843-48.48zM855.0332285 580.57142843q0 28.38857157-19.81714313 48.2057147l-263.03999997 263.58857157q-20.9142853 19.81714313-48.75428534 19.81714312-28.38857157 0-48.20571468-19.81714312l-383.04-383.58857157q-20.36571468-19.81714313-34.55999999-54.10285688t-14.19428534-62.6742853l0-222.85714313q0-27.84000002 20.36571469-48.20571469t48.2057147-20.36571466l222.85714313 0q28.38857157 0 62.6742853 14.19428529t54.65142842 34.55999999l383.04000001 382.49142843q19.81714313 20.9142853 19.81714314 48.75428532zM1060.74751475 580.57142843q0 28.38857157-19.81714313 48.2057147l-263.04 263.58857157q-20.9142853 19.81714313-48.75428531 19.81714312-19.26857155 0-31.61142843-7.47428531t-28.38857159-24.13714314l251.79428534-251.7942853q19.81714313-19.81714313 19.81714308-48.20571469 0-27.84000002-19.81714308-48.75428531l-383.04000001-382.49142845q-20.36571468-20.36571468-54.65142842-34.55999999t-62.67428532-14.19428534l120 0q28.38857157 0 62.67428532 14.19428534t54.65142842 34.55999999l383.03999998 382.49142845q19.81714313 20.9142853 19.81714314 48.75428531z" fill="currentColor"></path>
+</svg>
+    <span>TAGS</span>
+  </div>
+  <div class="widget-body">
+    <div class="tags-cloud">
+      <a href="/tags/C/" style="font-size: 13.33px;" class="tags-cloud-3">C#</a> <a href="/tags/C/" style="font-size: 20px;" class="tags-cloud-10">C++</a> <a href="/tags/Game/" style="font-size: 16.67px;" class="tags-cloud-7">Game</a> <a href="/tags/Maya/" style="font-size: 10px;" class="tags-cloud-0">Maya</a> <a href="/tags/Mel/" style="font-size: 10px;" class="tags-cloud-0">Mel</a> <a href="/tags/Python/" style="font-size: 20px;" class="tags-cloud-10">Python</a> <a href="/tags/Tool/" style="font-size: 16.67px;" class="tags-cloud-7">Tool</a> <a href="/tags/UE5/" style="font-size: 20px;" class="tags-cloud-10">UE5</a> <a href="/tags/Unity/" style="font-size: 13.33px;" class="tags-cloud-3">Unity</a>
+    </div>
+  </div>
+</section>
+    </div>
+  </article>
+</div>
+
+    <!-- footer container -->
+<footer id="footer" class="footer">
+  <div class="footer-container">
+    
+    <div class="social-icons">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+     
+    <p>&copy; 2025 <a href="/" target="_blank">Eric Chen</a></p>
+
+    
+
+    <p>Powered by <a href="https://hexo.io" target="_blank" rel="noopener noreferrer">Hexo</a></p>
+
+    <p>
+      <a href="javascript:;" id="theme-light"></a>
+      <a href="javascript:;" id="theme-dark"></a>
+      <a href="javascript:;" id="theme-auto"></a>
+    </p>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span id="busuanzi_container_site_pv">Total visits: <span id="busuanzi_value_site_pv">
+  </div>
+</footer>
+
+  </div>
+
+  <div class="back-to-top-fixed soft-size--round soft-style--box">
+    <svg class="icon icon-back-to-top" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+      <path d="M725.333333 426.666667c-12.8 0-21.333333-4.266667-29.866667-12.8l-213.333333-213.333333c-17.066667-17.066667-17.066667-42.666667 0-59.733333s42.666667-17.066667 59.733333 0l213.333333 213.333333c17.066667 17.066667 17.066667 42.666667 0 59.733333C746.666667 422.4 738.133333 426.666667 725.333333 426.666667z"></path>
+      <path d="M298.666667 426.666667c-12.8 0-21.333333-4.266667-29.866667-12.8-17.066667-17.066667-17.066667-42.666667 0-59.733333l213.333333-213.333333c17.066667-17.066667 42.666667-17.066667 59.733333 0s17.066667 42.666667 0 59.733333l-213.333333 213.333333C320 422.4 311.466667 426.666667 298.666667 426.666667z"></path>
+      <path d="M512 896c-25.6 0-42.666667-17.066667-42.666667-42.666667L469.333333 170.666667c0-25.6 17.066667-42.666667 42.666667-42.666667s42.666667 17.066667 42.666667 42.666667l0 682.666667C554.666667 878.933333 537.6 896 512 896z"></path>
+    </svg>
+  </div>
+
+  
+  <!-- aplayer -->
+
+
+<!-- dplayer -->
+
+
+<!-- copy button  -->
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script>
+
+<!-- https://clipboardjs.com/ -->
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+  
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+  
+  <!-- 尾部用户自定义相关内容 -->
+</body>
+</html>
