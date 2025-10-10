@@ -13,6 +13,16 @@ date: 2024-08-20 16:15:48
 
 ---
 
+
+
+## UE SVN 启动器
+
+### 1. 项目概述
+
+Unreal SVN Launcher 是一款使用 Python 和 PyQt6 开发的桌面应用程序，对标P4的UGS（Unreal Game Sync）工具，旨在为 Unreal Engine 开发者提供一个图形化的 SVN 工作流管理界面。
+
+本工具将SVN的检出、更新、日志查看等命令行操作，与UE项目特有的配置修改（如切换角色、设置启动地图）相结合，最终通过打包成单个可执行文件，为团队提供一个统一、便捷的入口点。
+
 ![svn1](images\svn1.jpg)
 
 ![svn2](images\svn2.jpg)
@@ -20,18 +30,6 @@ date: 2024-08-20 16:15:48
 ![svn3](images\svn3.jpg)
 
 ![svn4](images\svn4.jpg)
-
-
-
-## UE SVN 启动器
-
-### 1. 项目概述
-
-Unreal SVN Launcher 是一款使用 Python 和 PyQt6 开发的桌面应用程序，旨在为 Unreal Engine 开发者提供一个图形化的 SVN 工作流管理界面。
-
-本工具将SVN的检出、更新、日志查看等命令行操作，与UE项目特有的配置修改（如切换角色、设置启动地图）相结合，最终通过打包成单个可执行文件，为团队提供一个统一、便捷的入口点。
-
-*(在此处放置一张工具主界面的截图)*
 
 ### 2. 功能列表
 

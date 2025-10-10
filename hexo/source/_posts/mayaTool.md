@@ -70,7 +70,7 @@ date: 2024-08-20 16:15:48
 
 视频:
 
-maya_modelcheck
+<iframe width="560" height="315" src="//player.bilibili.com/player.html?isOutside=true&aid=115348728716113&bvid=BV1Dj47zUEuq&cid=32963953338&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
 
 模型检查工具中的第一栏会显示工具检查标准的更新时间，工具检查标准即为X_TOOL目录下的config_data.xlsx
 
@@ -166,17 +166,15 @@ config_data.xlsx中的相关配置：
 
 ### 1、标准化命名工具
 
-视频：
-
-maya_SVN
-
 会重命名部件与部件的第一个材质
+
+<iframe width="560" height="315" src="//player.bilibili.com/player.html?isOutside=true&aid=115348829445866&bvid=BV13V47zQE6L&cid=32964412889&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
 
 ### 2、SVN工具
 
-第一次提交要 手动选择SVN根目录。
+<iframe width="560" height="315" src="//player.bilibili.com/player.html?isOutside=true&aid=115348510674987&bvid=BV1ZC47zcED5&cid=32962577306&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
 
-角色模型文件归档svn分支:svn://172.27.190.188/3D_Assets
+第一次提交要 手动选择SVN根目录。
 
 提交的目录是根据maya文件命名来解析的，所以建议先用重命名工具标准化命名
 
@@ -209,6 +207,12 @@ maya_SVN
 
 ## 六、PoseWrangler Solver 自动化创建工具
 
+演示视频
+
+<iframe width="560" height="315" src="//player.bilibili.com/player.html?isOutside=true&aid=115348510676769&bvid=BV1ZC47zcE2F&cid=32962578146&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+
+
+
 ![img](images\poseTBt.jpg)
 
 ![img](images\pstool.jpg)
@@ -237,7 +241,15 @@ maya_SVN
 
 ![0](images\bswin.jpg)
 
+### 5、镜像Solver（正确命名pose）
 
+先在左侧solver列表中选中要镜像的Solver
+
+然后点击镜像选择的Solver
+
+- 如果需要镜像时，自动修复断开的Blendshape Target, 请勾上是否重连BlendShape复选框
+
+![mp121](images\mp121.png)
 
 ## 七、Livelink面部数据传输工具
 
@@ -269,7 +281,9 @@ maya_SVN
 
 
 
-视频：livelinkmaya
+视频：
+
+<iframe width="560" height="315" src="//player.bilibili.com/player.html?isOutside=true&aid=115348510613045&bvid=BV1qC47zcEiM&cid=32962513757&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
 
 
 
@@ -281,5 +295,7 @@ maya_SVN
 
 ![img](images\XGen.jpg)
 
-视频:maya_XGenCard
+视频:
+
+<iframe  width="560" height="315"  src="//player.bilibili.com/player.html?isOutside=true&aid=115348510678313&bvid=BV1ZC47zcEFC&cid=32962577515&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
 

@@ -21,17 +21,13 @@ date: 2024-08-20 16:15:48
 视频：
 驱动骨骼
 
+<iframe width="560" height="315" src="//player.bilibili.com/player.html?isOutside=true&aid=115348510613030&bvid=BV1qC47zcEiW&cid=32962577912&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+
+手势识别纠正
 
 
 
-
-
-
-手势识别
-
-
-
-
+<iframe width="560" height="315" src="//player.bilibili.com/player.html?isOutside=true&aid=115348577721536&bvid=BV16q47zNEL7&cid=32963103410&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
 
 
 
