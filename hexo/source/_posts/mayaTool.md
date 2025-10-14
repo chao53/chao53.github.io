@@ -21,7 +21,7 @@ date: 2024-08-20 16:15:48
 
 ## 二、安装方法
 
-![img](images\installMaya.jpg)
+<img src="https://chao53.github.io/images/installMaya.jpg" width="70%" height="70%">
 
 安装后如果发现工具还是旧版本可以重启maya再安装
 
@@ -43,12 +43,12 @@ date: 2024-08-20 16:15:48
 
 - 点击打开文件路径编辑器 可以打开文件路径编辑器，可以看到当前文件中丢失的路径
 
-![img](images\filept1.jpg)
+<img src="https://chao53.github.io/images/filept1.jpg" width="70%" height="70%">
 
 - 点击浏览可以选择一个路径。默认为maya文件同级的Texture文件夹。
 - 点击"用指定路径修复文件引用"即可用上面选择的路径替换掉丢失的路径（前提是选择的路径有效）
 
-![img](images\filept2.jpg)
+<img src="https://chao53.github.io/images/filept2.jpg" width="70%" height="70%">
 
 #### 功能2: 将当前文件引用的文件归拢到相对路径
 
@@ -58,13 +58,13 @@ date: 2024-08-20 16:15:48
 
 ### 3、不对称点查找工具
 
-![Asym](images\Asym.jpg)
+<img src="https://chao53.github.io/images/Asym.jpg" width="70%" height="70%">
 
 先选中要检查的物体，再点击找到模型的不对称点 就可以选中不对称的点。
 
 ## 四、模型检查工具
 
-![img](images\check1.jpg)
+<img src="https://chao53.github.io/images/check1.jpg" width="30%" height="30%">
 
 点击check的按钮打开工具
 
@@ -76,9 +76,9 @@ date: 2024-08-20 16:15:48
 
 其作用是配置模型检查标准的细节数据。比如角色设定的身高数据
 
-![img](images\check2.jpg)
+<img src="https://chao53.github.io/images/check2.jpg" width="70%" height="70%">
 
-![img](images\check3.jpg)
+<img src="https://chao53.github.io/images/check3.jpg" width="30%" height="30%">
 
 如果这些数据有更新，可以点击模型检查工具UI里的 "更新检查标准数据文件"，然后选择新版本的config_data.xlsx 来完成更新。
 
@@ -94,73 +94,73 @@ config_data.xlsx中的相关配置：
 
 表"基本配置" 中的身高检查容差
 
-![img](images\tollerant.jpg)
+<img src="https://chao53.github.io/images/tollerant.jpg" width="30%" height="30%">
 
 表"角色身高" 中各个角色的具体身高设定，第一列为角色名，第二列为身高
 
-![img](images\check4.jpg)
+<img src="https://chao53.github.io/images/check4.jpg" width="30%" height="30%">
 
 点击检查后，会显示身高差，在容差之内会视为通过
 
-![img](images\check5.jpg)
+<img src="https://chao53.github.io/images/check5.jpg" width="70%" height="70%">
 
 注意：带绑定的角色检查的身高会不准确。只适用于未绑定的mesh
 
 ### 2、检测模型是否在地面网格上方
 
-![img](images\check6.jpg)
+<img src="https://chao53.github.io/images/check6.jpg" width="70%" height="70%">
 
 检测是否有物体低于地平面
 
 ### 3、模型面数检查工具
 
-![img](images\check7.jpg)
+<img src="https://chao53.github.io/images/check7.jpg" width="70%" height="70%">
 
 只能识别按规范命名的模型。
 
 ### 4、检查大于四边面
 
-![img](images\check8.jpg)
+<img src="https://chao53.github.io/images/check8.jpg" width="70%" height="70%">
 
 单独检查该项，能选中大于四边的面
 
 ### 5、检查废点废面
 
-![img](images\chekc9.jpg)
+<img src="https://chao53.github.io/images/chekc9.jpg" width="70%" height="70%">
 
 单独检查该项，能选中废点废面
 
 ### 6、检查网格体是否左右对称
 
-![img](images\check10.jpg)
+<img src="https://chao53.github.io/images/check10.jpg" width="70%" height="70%">
 
 会显示有不对称点的物体。 在X_Tool中能选中这些不对称的点
 
-![img](images\check11.jpg)
+<img src="https://chao53.github.io/images/check11.jpg" width="70%" height="70%">
 
 ### 7、检查网格体命名
 
-![img](images\check12.jpg)
+<img src="https://chao53.github.io/images/check12.jpg" width="70%" height="70%">
 
 命名规则[Maya 模型命名规范](https://dztkd8r9io.feishu.cn/docx/V7m5dUyNqoFDSFxoAwqcXxnQnhe?from=from_copylink)
 
 ### 8、检查UV集命名
 
-![img](images\check13.jpg)
+<img src="https://chao53.github.io/images/check13.jpg" width="70%" height="70%">
 
 只允许有一个叫map1的uv集
 
 ### 9、检查眼球UV是否有反转
 
-![img](images\check14bt.jpg)
+<img src="https://chao53.github.io/images/check14bt.jpg" width="70%" height="70%">
 
-![img](images\eyeUV.jpg)
+<img src="https://chao53.github.io/images/eyeUV.jpg" width="70%" height="70%">
 
 在uv编辑器里看到是红色的uv就是反转的
 
 ### 10、检查Body的拓扑是否与Metahuman 的Body一致
 
-![img](images\Check14.jpg)
+<img src="https://chao53.github.io/images/Check14.jpg" width="70%" height="70%">
 
 ## 五、工作流工具
 
@@ -187,7 +187,7 @@ config_data.xlsx中的相关配置：
 
 如果出现如下图的提示
 
-![img](images\svnToolWarn.jpg)
+<img src="https://chao53.github.io/images/svnToolWarn.jpg" width="70%" height="70%">
 
 则需要按以下步骤操作
 
@@ -195,11 +195,11 @@ config_data.xlsx中的相关配置：
 
 2，点击Modify
 
-![img](images\svnIns2.jpg)
+<img src="https://chao53.github.io/images/svnIns2.jpg" width="70%" height="70%">
 
 3，command line client tools 这个要选择第一项
 
-![img](images\svnIns.jpg)
+<img src="https://chao53.github.io/images/svnIns.jpg" width="70%" height="70%">
 
 4，后面一路默认继续重新安装就行
 
@@ -213,9 +213,7 @@ config_data.xlsx中的相关配置：
 
 
 
-![img](images\poseTBt.jpg)
-
-![img](images\pstool.jpg)
+<img src="https://chao53.github.io/images/poseTBt.jpg" width="30%" height="30%">
 
 ### 1、打开PoseWranger
 
@@ -225,7 +223,7 @@ config_data.xlsx中的相关配置：
 
 会把原有的Solver 全删掉并创建本项目需要的Solvers ， 如下图
 
-![img](images\poseWrangler.jpg)
+<img src="https://chao53.github.io/images/poseWrangler.jpg" width="70%" height="70%">
 
 ### 3、重建Solver并保留原有数据
 
@@ -239,7 +237,7 @@ config_data.xlsx中的相关配置：
 
 点击后会根据每个pose 生成BlendShape
 
-![0](images\bswin.jpg)
+<img src="https://chao53.github.io/images/bswin.jpg" width="70%" height="70%">
 
 ### 5、镜像Solver（正确命名pose）
 
@@ -249,27 +247,27 @@ config_data.xlsx中的相关配置：
 
 - 如果需要镜像时，自动修复断开的Blendshape Target, 请勾上是否重连BlendShape复选框
 
-![mp121](images\mp121.png)
+<img src="https://chao53.github.io/images/mp121.png" width="70%" height="70%">
 
 ## 七、Livelink面部数据传输工具
 
-![img](images\llb.png
+<img src="https://chao53.github.io/images/llb.png
 
 #### 1、模式1：直接驱动BlendShape
 
 打开工具会自动获取场景内的BS。 也可以手动选择模型，来指定特定的受驱动BS
 
-![llb2](images\llb2.png)
+![llb2](images\llb2.png" width="70%" height="70%">
 
 #### 2、模式2：先建立控制器，再进行livelink数据驱动
 
-![llb3](images\llb3.png)
+<img src="https://chao53.github.io/images/llb3.png" width="50%" height="50%">
 
 先点击导入控制面板，
 
 然后选择要驱动的模型，点击约束到控制器。
 
-![llb4](images\llb4.png)
+<img src="https://chao53.github.io/images/llb4.png" width="70%" height="70%">
 
 #### 3、livelink 连接
 
@@ -291,9 +289,9 @@ config_data.xlsx中的相关配置：
 
 ### 1、卡片头发生成工具
 
-![img](images\GHBut.jpg)
+<img src="https://chao53.github.io/images/GHBut.jpg" width="70%" height="70%">
 
-![img](images\XGen.jpg)
+<img src="https://chao53.github.io/images/XGen.jpg" width="70%" height="70%">
 
 视频:
 

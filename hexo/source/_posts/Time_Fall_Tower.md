@@ -65,15 +65,15 @@ https://github.com/chao53/Eric-s-Profile/releases/download/release/TimeFallTower
 
 在游戏过程中，这些子类会作为组件动态地添加到相应的游戏管理器中。例如，当一个协同效果被激活时，羁绊效果子类组件将被添加到协同效果管理器中。
 
-![](images/tt_sy2.jpg)
+<img src="https://chao53.github.io/images/tt_sy2.jpg" width="70%" height="70%">
 
 遗物同理
 
-![](images/tt_re2.jpg)
+<img src="https://chao53.github.io/images/tt_re2.jpg" width="70%" height="70%">
 
 最后，管理器会共同触发这些子类的特效。
 
-![](images/tt_co.jpg)
+<img src="https://chao53.github.io/images/tt_co.jpg" width="70%" height="70%">
 
 - 国际化
 

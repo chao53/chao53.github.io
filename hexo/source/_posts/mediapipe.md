@@ -33,7 +33,7 @@ date: 2024-08-20 16:15:48
 
 架构设计
 
-![mediapipePipeLine](images\mediapipePipeLine.jpg)
+<img src="https://chao53.github.io/images/mediapipePipeLine.jpg" width="70%" height="70%">
 
 UE5端通信总管HandDataReceiver  
 
@@ -51,7 +51,7 @@ UE5端通信总管HandDataReceiver
 
 4. **UE集成：** 在插件的 Build.cs 文件中，通过配置 **RuntimeDependencies**，实现了在UE项目打包时，能自动将此 .exe 文件包含到最终的游戏目录中。
 
-   ![mpexe](images\mpexe.jpg)
+   <img src="https://chao53.github.io/images/mpexe.jpg" width="70%" height="70%">
 
 #### 二、 构建UE5端数据接收层 (AX_HandDataReceiverActor)
 
@@ -138,7 +138,7 @@ MediaPipe 在进行推断时，会为检测到的每一只手提供一个**置�
   - 提供 UseOriginData 开关，允许开发者绕过任何平滑、约束或限制，直接观察 MediaPipe 输出在模型上的原始映射效果。
   - 该模式特别适用于调试 landmark 方向、坐标轴映射和手指弯曲逻辑等底层问题。
 
-![MediaPipeABP](images\MediaPipeABP.jpg)
+<img src="https://chao53.github.io/images/MediaPipeABP.jpg" width="70%" height="70%">
 
 
 
@@ -158,7 +158,7 @@ MediaPipe 在进行推断时，会为检测到的每一只手提供一个**置�
 
   - 对于每个视频，脚本会自动创建一个与视频文件名同名的文件夹，并以固定的帧率（可配置）从中提取图片。
 
-    ![GestureTrain](images\GestureTrain.jpg)
+    <img src="https://chao53.github.io/images/GestureTrain.jpg" width="70%" height="70%">
 
 - **构建多样化数据集**:
 
@@ -178,7 +178,7 @@ MediaPipe 在进行推断时，会为检测到的每一只手提供一个**置�
 
 - **迁移学习**: 没有从零开始训练模型。**MediaPipe Model Maker** 在后台自动加载了 Google 预训练的、强大的**手部特征提取基础模型**，只需在其之上，用自己的数据集来微调（Fine-tuning）一个全新的、为自定义手势量身定做的分类头。这使得训练过程不仅速度飞快（通常在十几分钟内完成），而且模型起点高，准确率非常有保障。
 
-  ![GoogleTrain](images\GoogleTrain.jpg)
+  <img src="https://chao53.github.io/images/GoogleTrain.jpg" width="100%" height="100%">
 
 #### 3. 端到端部署与交互
 
@@ -196,4 +196,4 @@ MediaPipe 在进行推断时，会为检测到的每一只手提供一个**置�
   
     
 
-![MP_train](images\MP_train.jpg)
+<img src="https://chao53.github.io/images/MP_train.jpg" width="70%" height="70%">

@@ -41,7 +41,7 @@ Gameplay demo 视频：
 
 我们的项目团队利用云技术在云端计算机上渲染高精度场景，然后将本地游戏场景与渲染端进行同步。这显著提升了游戏性能。
 
-![](images/ezgif.gif)
+<img src="https://chao53.github.io/images/ezgif.gif" width="70%" height="70%">
 
 
 
@@ -74,19 +74,19 @@ Gameplay demo 视频：
 
 通过在骨骼的盆骨处将上半身和下半身分开，我将弓箭手射击的上半身动画与下半身的移动动画结合起来。实现弓箭手在移动时丝滑射击的动画效果。
 
-![](images/ev_bl.png)
+<img src="https://chao53.github.io/images/ev_bl.png" width="70%" height="70%">
 
 一般来说，移动动画使用混合空间来覆盖四个方向的各种地面动作。然而，对于原地转向动作，根运动需要使用蒙太奇（montages）。播放一个蒙太奇可能会中断另一个蒙太奇，因此使用UE5的“Animation Slot Groups”非常重要。当这些槽被设置为不同的组时，可以防止中断，并允许同时播放多个蒙太奇。例如，将弓箭动作的蒙太奇数据设置在“上半身”槽中，而将原地转向的蒙太奇设置在“下半身”槽中，这样就可以无缝地整合不同的身体运动动画。
 
-![](images/ev-mt.png)
+<img src="https://chao53.github.io/images/ev-mt.png" width="70%" height="70%">
 
 当玩家的控制器开始旋转时，计算控制器旋转角度与角色朝向之间的差值。如果差值超过90度，则触发转向蒙太奇（turning montage）。
 
-![](images/ev-tr1.png)
+<img src="https://chao53.github.io/images/ev-tr1.png" width="70%" height="70%">
 
 在角色蓝图中，检查每一帧，看看偏移角度的绝对值是否大于90度。如果是，则进入旋转状态，并根据该值是否大于0，选择播放左转或右转动画。
 
-![](images/ev-tr2.png)
+<img src="https://chao53.github.io/images/ev-tr2.png" width="70%" height="70%">
 
 
 
@@ -106,4 +106,4 @@ Gameplay demo 视频：
 
 UI系统是使用Unreal Engine的Widget  Blueprint和自定义UI事件系统构建的。该设置允许在游戏过程中进行动态更改，例如切换武器或执行连击时，武器图标会更新。类似地，瞄准镜会随着弓箭蓄力时间的变化而变化。玩家和Boss的生命值和耐力条会根据来自玩家和敌人蓝图的数据实时更新。
 
-![](images/ev_ui.jpg)
+<img src="https://chao53.github.io/images/ev_ui.jpg" width="70%" height="70%">
