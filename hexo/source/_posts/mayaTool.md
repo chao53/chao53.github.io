@@ -62,6 +62,16 @@ date: 2024-08-20 16:15:48
 
 先选中要检查的物体，再点击找到模型的不对称点 就可以选中不对称的点。
 
+### 4、批量重命名工具
+
+可以加前缀，后缀，替换字符，重命名时会自动给多个物体加_1 _2的后缀
+
+<table><tr>
+<td><img src="https://chao53.github.io/images/rename1.png" width="65%" height="65%"></td>
+<td><img src="https://chao53.github.io/images/rename2.png" width="120%" height="120%"></td>
+</tr></table>
+
+
 ## 四、模型检查工具
 
 <img src="https://chao53.github.io/images/check1.jpg" width="30%" height="30%">
