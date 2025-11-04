@@ -16,6 +16,12 @@ date: 2024-08-20 16:15:44
 
 ### **项目名称：LiveLink数据录制与重放工具**
 
+视频演示：
+
+<iframe width="560" height="315" src="//player.bilibili.com/player.html?isOutside=true&aid=115348510676785&bvid=BV1ZC47zcE1C&cid=32962514903&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+
+
+
 **项目概述 (Project Overview)**
 
 本项目是一款桌面应用程序，用于处理来自面部捕捉应用（如Apple Live Link Face）的实时数据。该工具的核心功能是接收数据流，并提供录制、保存、重放和远程传输的能力。
@@ -45,9 +51,7 @@ date: 2024-08-20 16:15:44
 
 <img src="https://chao53.github.io/images/llte.jpg" width="100%" height="100%">
 
-
-
-<img src="https://chao53.github.io/images/llt2.jpg" width="100%" height="100%">
+<img src="https://chao53.github.io/images/llt2.png" width="100%" height="100%">
 
 
 
@@ -64,6 +68,5 @@ date: 2024-08-20 16:15:44
 
 
 
-视频：
 
-<iframe width="560" height="315" src="//player.bilibili.com/player.html?isOutside=true&aid=115348510676785&bvid=BV1ZC47zcE1C&cid=32962514903&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+
