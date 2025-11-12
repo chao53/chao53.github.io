@@ -1,7 +1,7 @@
 ---
-title: UE5单镜头手势识别
+title: UE5单镜头手势识别插件
 cover: /MP_conver.jpg
-top: 14
+top: 18
 d1: 将谷歌的MediaPipe
 d2: 解决方案，整合进UE5
 d3: 里,以驱动MetaHuman
@@ -9,6 +9,7 @@ tags:
   - UE5
   - C++
   - Python
+  - Solution
 date: 2024-08-20 16:15:48
 ---
 

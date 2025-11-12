@@ -1,10 +1,10 @@
 ---
-title: LiveLink数据录制与重放工具
-cover: /banner.jpg
+title: LiveLink数据远程录制与重放工具
+cover: /llt_cover.jpg
 d1: 一个能够对livelink
 d2: 数据远程多通道录制，
 d3:	并能重放的工具
-top: 10
+top: 19
 tags:
   - Tool
   - Python
@@ -14,7 +14,7 @@ date: 2024-08-20 16:15:44
 
 
 
-### **项目名称：LiveLink数据录制与重放工具**
+### **项目名称：LiveLink数据远程录制与重放工具**
 
 视频演示：
 

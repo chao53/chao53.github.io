@@ -1,6 +1,6 @@
 ---
 title: UE SVN 启动器
-cover: /banner.jpg
+cover: /svn_cover.jpg
 top: 4
 d1: 对照P4的UGS工具功能,开发的
 d2: 基于SVN的UE启动器，能预先
