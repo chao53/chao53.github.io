@@ -1,7 +1,7 @@
 ---
 title: 其他游戏Demo合集
 cover: /crowed_cover.png
-top: 8
+top: 1
 d1: 从大学开始，陆
 d2: 续开发的一些游
 d3: 戏Demo

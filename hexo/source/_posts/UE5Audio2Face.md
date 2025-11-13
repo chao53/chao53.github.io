@@ -1,16 +1,21 @@
 ---
-title: UE5 Audio2Face面捕插件
-cover: /crypto.jpg
-top: 5
-d1: 一个专为加密货币交易者设计
-d2: 的桌面级量化分析工具，集成
-d3: 了信号预警与量化回测的功能
+title: UE5 Audio2Face音频驱嘴型插件
+cover: /a2fc.jpg
+top: 6
+d1: 将英伟达的Audio2Face 
+d2: 编译出的SDk。以第三方
+d3: 库的形式接入UE5
 tags:
-  - Tool
-  - Python
+  - UE5
+  - C++
+  - Solution
 date: 2024-08-20 16:15:48
 
 ---
+
+开发背景： 在2025年10月1日 英伟达弃用了旧有的 omniverse 框架。 同时开源了 Audio2Face的代码。此时官方的UE5插件需要链接为服务器，才能驱动动画，不符合项目需求。于是我从编译Audio2Face SDK 开始，从头把A2F接入UE5，开发了这个插件 。
+
+
 
 视频：
 
