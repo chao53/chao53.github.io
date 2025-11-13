@@ -24,7 +24,7 @@
 
   
 
-  <title>LiveLink数据远程录制与重放工具 | Eric Chen - Game Programming &amp; Design Portfolio</title>
+  <title>UE5 Audio2Face面捕插件 | Eric Chen - Game Programming &amp; Design Portfolio</title>
 
   
 
@@ -50,7 +50,7 @@
 <!-- header container -->
 <header class="header-container post">
   
-    <div class="post-image" style="background-image: url(/llt_cover.jpg)"></div>
+    <div class="post-image" style="background-image: url(/crypto.jpg)"></div>
   
 
   <!-- navbar -->
@@ -95,16 +95,16 @@
     <div class="header-content2">
       <div class="post-text layout-block">
         <div class="layout-margin">
-          <h1 class="title-wrap">LiveLink数据远程录制与重放工具</h1>
+          <h1 class="title-wrap">UE5 Audio2Face面捕插件</h1>
           <!-- <h2 class="title-sub-wrap">
             <strong>Eric Chen</strong>
             <span>发布于</span>
-            <time  class="article-date" datetime="2024-08-20T08:15:44.000Z" itemprop="datePublished">2024-08-20</time>
+            <time  class="article-date" datetime="2024-08-20T08:15:48.000Z" itemprop="datePublished">2024-08-20</time>
           </h2>
           
             <h2 class="last-time">
               <span>最后更新于</span>
-              <time  class="article-updated" datetime="2025-11-12T07:11:12.039Z" itemprop="dateUpdated">2025-11-12</time>
+              <time  class="article-updated" datetime="2025-11-13T07:06:03.813Z" itemprop="dateUpdated">2025-11-13</time>
             </h2>
           
            -->
@@ -139,63 +139,46 @@
       
       
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-        <h3 id="项目名称：LiveLink数据远程录制与重放工具"><a href="#项目名称：LiveLink数据远程录制与重放工具" class="headerlink" title="项目名称：LiveLink数据远程录制与重放工具"></a><strong>项目名称：LiveLink数据远程录制与重放工具</strong></h3><p>视频演示：</p>
-<iframe width="560" height="315" src="//player.bilibili.com/player.html?isOutside=true&aid=115348510676785&bvid=BV1ZC47zcE1C&cid=32962514903&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+        <p>视频：</p>
+<iframe width="560" height="315" src="//player.bilibili.com/player.html?isOutside=true&aid=115540978832050&bvid=BV16fCWBGEfX&cid=33967705229&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
 
 
 
-<p><strong>项目概述 (Project Overview)</strong></p>
-<p>本项目是一款桌面应用程序，用于处理来自面部捕捉应用（如Apple Live Link Face）的实时数据。该工具的核心功能是接收数据流，并提供录制、保存、重放和远程传输的能力。</p>
-<p>为了适应不同的工作环境，工具内置了两种操作模式：“局-域网录制”用于本地网络环境，“服务器录制”则通过连接一台云服务器，允许从外网接收数据，支持多通道并行录制。此外，工具还包含一个数据播放器，可以对录制好的文件进行预览、控制和剪辑。</p>
-<p><strong>核心功能与用途 (Core Functions &amp; Applications)</strong></p>
-<ol>
-<li><strong>数据录制与保存</strong>：<ul>
-<li><strong>用途</strong>：备份演员的面部表演数据，或捕捉特定表情以供后续使用。</li>
-<li><strong>功能</strong>：可以录制指定时长的面部数据流，并将其保存为本地 .dat 文件，方便归档和管理。</li>
-</ul>
-</li>
-<li><strong>远程数据传输</strong>：<ul>
-<li><strong>用途</strong>：解决手机和电脑不在同一局域网内而无法连接的问题，支持远程工作和分布式团队协作。</li>
-<li><strong>功能</strong>：通过“服务器录制”模式，用户可以配置一台云服务器作为中继。手机只需连接互联网，即可将数据发送到服务器，再由服务器转发至本地电脑进行录制。</li>
-</ul>
-</li>
-<li><strong>多通道并行录制</strong>：<ul>
-<li><strong>用途</strong>：在需要同时捕捉多名演员表情的场景下（如多人对话动画），提高录制效率。</li>
-<li><strong>功能</strong>：“服务器录制”界面提供了一个通道管理列表，用户可以添加多个录制通道，为每个通道设置独立的接收端口和保存文件，并对它们进行独立或批量的开始&#x2F;停止控制。</li>
-</ul>
-</li>
-<li><strong>数据重放与剪辑</strong>：<ul>
-<li><strong>用途</strong>：方便动画师在没有演员实时配合的情况下，反复预览、调试和使用已录制的表演数据。</li>
-<li><strong>功能</strong>：内置的数据播放器可以加载 .dat 文件，并提供以下控制：<ul>
-<li>进度条拖动，实现快速跳转。</li>
-<li>播放、暂停、逐帧前进&#x2F;后退。</li>
-<li>循环播放和自定义区间播放。</li>
-<li>将选定的区间“另存为”一个新的、独立的片段文件。</li>
-</ul>
-</li>
-</ul>
-</li>
-</ol>
-<p><strong>界面展示</strong></p>
-<img src="https://chao53.github.io/images/llte.jpg" width="100%" height="100%">
-
-<img src="https://chao53.github.io/images/llt2.png" width="100%" height="100%">
-
-
-
-<p><strong>技术实现 (Technical Implementation)</strong></p>
+<p><strong>核心功能</strong></p>
 <ul>
-<li><strong>应用程序框架</strong>：使用 <strong>Python</strong> 作为主要开发语言，图形用户界面（GUI）基于 <strong>PyQt6</strong> 框架构建。</li>
-<li><strong>数据处理</strong>：通过Python的 socket 模块接收UDP数据包。录制的数据（包含时间戳和原始数据）使用 pickle 模块进行序列化后存入文件。</li>
-<li><strong>并发处理</strong>：为了避免录制、重放等长时间操作阻塞GUI，所有耗时任务都在独立的 <strong>QThread</strong> 后台线程中执行。多通道录制会为每个通道创建独立的线程，实现并行处理。</li>
-<li><strong>远程连接方案</strong>：<ul>
-<li><strong>核心组件</strong>：使用开源反向代理工具 <strong>frp</strong>，并需要用户提供一台具有公网IP的云服务器（如阿里云ECS）部署frps服务端。</li>
-<li><strong>集成方式</strong>：本工具在图形界面中集成了frp的客户端(frpc)。当用户点击连接时，程序会根据界面上的配置动态生成frpc.toml文件，并通过subprocess模块在后台启动frpc.exe进程，建立与云服务器的连接隧道。</li>
-<li><strong>状态反馈</strong>：程序通过实时解析frpc客户端的日志，来判断每个通道的连接状态（成功或失败），并在UI表格中通过颜色变化（绿色&#x2F;红色）向用户提供反馈。</li>
-</ul>
+<li>集成 NVIDIA Audio2Face C++ SDK，在 Unreal Engine 中通过音频实时生成高保真面部动画。</li>
+<li>支持两种驱动模式：<ol>
+<li><strong>实时驱动</strong>：通过麦克-风输入，实时捕捉音频并驱动角色面部表情。</li>
+<li><strong>文件驱动</strong>：使用预录制的 .wav 音频文件，生成与音频精确同步的面部动画。</li>
+</ol>
 </li>
-<li><strong>打包与部署</strong>：项目代码结构支持使用 <strong>PyInstaller</strong> 进行打包。通过–add-data参数将frpc.exe等外部依赖捆绑，生成一个单文件的.exe可执行程序，方便在Windows环境下分发和使用。</li>
 </ul>
+<p><strong>技术特性</strong></p>
+<ul>
+<li><strong>模型支持</strong>：支持加载由 NVIDIA Omniverse Audio2Face 应用生成的标准模型文件（model.json）。</li>
+<li><strong>蓝图接口</strong>：提供简洁的蓝图节点，开发者和美术师可通过 StartCapture（开始麦克风捕捉）和 PreProcessAndPlay（播放音频文件）等函数轻松调用插件功能。</li>
+<li><strong>动画系统集成</strong>：通过自定义动画节点（AnimNode）无缝集成至UE的动画蓝图（Animation Blueprint），将生成的表情数据应用于任何角色骨骼网格体。</li>
+<li><strong>参数化控制</strong>：支持在运行时动态调整面部动画的各项参数，如表情强度、平滑度、眼睑和嘴唇偏移等，以实现对最终效果的精细控制。</li>
+<li><strong>音频处理</strong>：内置音频处理管线，自动将输入的音频（多声道、任意采样率）转换为A2F引擎所需的格式（单声道、16kHz）。</li>
+</ul>
+<p><strong>第三方库集成</strong></p>
+<ul>
+<li><p><strong>SDK编译与集成</strong>：插件的核心功能基于 NVIDIA Audio2Face C++ SDK。SDK源码被编译成动态链接库（DLL），并作为第三方模块集成到插件中。</p>
+<p><img src="/images%5Ca2f.jpg" alt="a2f"></p>
+<img src="https://chao53.github.io/images/a2f.jpg" width="66%" height="66%">
+</li>
+<li><p><strong>依赖管理</strong>：所有必需的运行时依赖项，包括编译后的SDK库、NVIDIA CUDA 运行时库、TensorRT 库以及 miniaudio 库，均已包含在插件的 ThirdParty 和 Binaries 目录中，无需用户手动安装。</p>
+</li>
+<li><p><strong>跨平台音频</strong>：使用轻量级 miniaudio 库处理底层音频捕捉，确保低延迟和跨平台兼容性。</p>
+</li>
+</ul>
+<p><strong>工作流程</strong></p>
+<ol>
+<li>将插件提供的 AudioCaptureComponent（用于实时）或 AudioCurveSourceComponent（用于文件）添加到场景中的 Actor 上。</li>
+<li>在组件的细节面板中，指定要使用的A2F模型目录。</li>
+<li>在动画蓝图中，添加 X_Audio2Face 动画节点，并将其连接到最终姿势输出。</li>
+<li>通过蓝图或C++调用相应组件的函数，启动音频处理和动画生成。</li>
+</ol>
 
       </section>
 
@@ -206,12 +189,12 @@
             <div class="article-nav-item layout-padding">
   <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
     
-      <div class="card-cover" background-image-lazy data-img="/Evolution_cover.png"></div>
+      <div class="card-cover" background-image-lazy data-img="/crypto.jpg"></div>
     
     <div class="card-text">
       
-        <a href="/2024/08/20/Evalution/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">Evalution</h2>
+        <a href="/2024/08/20/crypto%E4%BF%A1%E5%8F%B7%E9%A2%84%E8%AD%A6%E4%B8%8E%E9%87%8F%E5%8C%96%E5%9B%9E%E6%B5%8B%E5%B7%A5%E5%85%B7/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">crypto信号预警与量化回测工具</h2>
         </a>
       
       <div class="card-text--row">Prev</div>
@@ -223,12 +206,12 @@
             <div class="article-nav-item layout-padding">
   <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
     
-      <div class="card-cover" background-image-lazy data-img="/TFT_cover.jpg"></div>
+      <div class="card-cover" background-image-lazy data-img="/Evolution_cover.png"></div>
     
     <div class="card-text">
       
-        <a href="/2024/08/20/Time_Fall_Tower/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">Time Fall Tower</h2>
+        <a href="/2024/08/20/Evalution/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">Evalution</h2>
         </a>
       
       <div class="card-text--row">Next</div>
