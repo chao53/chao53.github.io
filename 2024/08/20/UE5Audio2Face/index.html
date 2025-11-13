@@ -24,7 +24,7 @@
 
   
 
-  <title>其他工具合集 | Eric Chen - Game Programming &amp; Design Portfolio</title>
+  <title>UE5 Audio2Face音频驱嘴型插件 | Eric Chen - Game Programming &amp; Design Portfolio</title>
 
   
 
@@ -50,7 +50,7 @@
 <!-- header container -->
 <header class="header-container post">
   
-    <div class="post-image" style="background-image: url(/banner.jpg)"></div>
+    <div class="post-image" style="background-image: url(/a2fc.jpg)"></div>
   
 
   <!-- navbar -->
@@ -95,7 +95,7 @@
     <div class="header-content2">
       <div class="post-text layout-block">
         <div class="layout-margin">
-          <h1 class="title-wrap">其他工具合集</h1>
+          <h1 class="title-wrap">UE5 Audio2Face音频驱嘴型插件</h1>
           <!-- <h2 class="title-sub-wrap">
             <strong>Eric Chen</strong>
             <span>发布于</span>
@@ -104,7 +104,7 @@
           
             <h2 class="last-time">
               <span>最后更新于</span>
-              <time  class="article-updated" datetime="2025-11-13T07:23:18.340Z" itemprop="dateUpdated">2025-11-13</time>
+              <time  class="article-updated" datetime="2025-11-13T07:22:00.644Z" itemprop="dateUpdated">2025-11-13</time>
             </h2>
           
            -->
@@ -115,11 +115,9 @@
   
     <li><a href="/tags/C/">🏷️ C++</a></li>
   
-    <li><a href="/tags/Tool/">🏷️ Tool</a></li>
-  
-    <li><a href="/tags/Python/">🏷️ Python</a></li>
-  
     <li><a href="/tags/UE5/">🏷️ UE5</a></li>
+  
+    <li><a href="/tags/Solution/">🏷️ Solution</a></li>
   
 </ul>
         </div>
@@ -143,36 +141,46 @@
       
       
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-        <h2 id="1、UE5-自动化角色展示工具"><a href="#1、UE5-自动化角色展示工具" class="headerlink" title="1、UE5 自动化角色展示工具"></a>1、<strong>UE5 自动化角色展示工具</strong></h2><iframe  width="560" height="315"  src="//player.bilibili.com/player.html?isOutside=true&aid=115348510611230&bvid=BV1BC47zcEju&cid=32962579828&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+        <p>开发背景： 在2025年10月1日 英伟达弃用了旧有的 omniverse 框架。 同时开源了 Audio2Face的代码。此时官方的UE5插件需要链接为服务器，才能驱动动画，不符合项目需求。于是我从编译Audio2Face SDK 开始，从头把A2F接入UE5，开发了这个插件 。</p>
+<p>视频：</p>
+<iframe width="560" height="315" src="//player.bilibili.com/player.html?isOutside=true&aid=115540978832050&bvid=BV16fCWBGEfX&cid=33967705229&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
 
 
 
-<p>本工具是一个基于 Unreal Engine 5 的脚本化工具，用于为3D角色模型自动生成标准化的转盘展示视频。它通过自动化取代了手动设置场景、动画、渲染及后期的多步流程，旨在统一输出标准并提升工作效率。</p>
-<p><strong>核心功能:</strong></p>
+<p><strong>核心功能</strong></p>
 <ul>
-<li><strong>自动化流程</strong>：用户选择角色后，工具可自动执行从场景设置到视频生成的完整流程，无需人工干预。</li>
-<li><strong>程序化动画生成</strong>：自动创建Level Sequence，并生成包含“摄像机环绕”和“角色自转”的转盘动画。</li>
-<li><strong>集成MRQ渲染与FFmpeg编码</strong>：集成Movie Render Queue (MRQ)进行渲染，并调用FFmpeg将图像序列自动合成为视频文件（.mp4）。</li>
-<li><strong>参数化配置</strong>：支持通过命令行传入参数，用于调整渲染预设、摄像机参数和视频编码选项，以支持CI&#x2F;CD流程集成。</li>
+<li>集成 NVIDIA Audio2Face C++ SDK，在 Unreal Engine 中通过音频实时生成高保真面部动画。</li>
+<li>支持两种驱动模式：<ol>
+<li><strong>实时驱动</strong>：通过麦克-风输入，实时捕捉音频并驱动角色面部表情。</li>
+<li><strong>文件驱动</strong>：使用预录制的 .wav 音频文件，生成与音频精确同步的面部动画。</li>
+</ol>
+</li>
 </ul>
-<h2 id="2、规范化贴图分辨率工具"><a href="#2、规范化贴图分辨率工具" class="headerlink" title="2、规范化贴图分辨率工具"></a>2、规范化贴图分辨率工具</h2><p>工具入口: 在UTexture资产的右键菜单里的Texture Tools选项，可多选图片来批量处理。</p>
-<img src="https://chao53.github.io/images/1280X1280.PNG" width="70%" height="70%">
-
-<p>功能： 对错误分辨率的贴图进行自动规范化 缩放贴图至目标分辨率 按百分比缩放贴图 如：</p>
-<p>1000x1500-&gt;1024x1024</p>
-<p>2300x1000-&gt;2048x1024</p>
-<img src="https://chao53.github.io/images/tt12.jpg " width="70%" height="70%">
-
-<h2 id="3、Groom头发导出XGen引导线ABC工具"><a href="#3、Groom头发导出XGen引导线ABC工具" class="headerlink" title="3、Groom头发导出XGen引导线ABC工具"></a>3、Groom头发导出XGen引导线ABC工具</h2><p>工具入口: 在Groom资产的右键菜单里的Export GuideLine ABC选项</p>
-<img src="https://chao53.github.io/images/tt13.jpg " width="70%" height="70%">
-
-<p>点击后会弹出一个窗口，可以设置最小的曲线间隔。（数值越大，导出的引导线越稀疏）</p>
-<img src="https://chao53.github.io/images/get.png" width="70%" height="70%">
-
-<p>然后选择导出位置导出即可</p>
-<p>ABC文件可直接导入maya 成曲线</p>
-<img src="https://chao53.github.io/images/gtxg.png" width="70%" height="70%">
-
+<p><strong>技术特性</strong></p>
+<ul>
+<li><strong>模型支持</strong>：支持加载由 NVIDIA Omniverse Audio2Face 应用生成的标准模型文件（model.json）。</li>
+<li><strong>蓝图接口</strong>：提供简洁的蓝图节点，开发者和美术师可通过 StartCapture（开始麦克风捕捉）和 PreProcessAndPlay（播放音频文件）等函数轻松调用插件功能。</li>
+<li><strong>动画系统集成</strong>：通过自定义动画节点（AnimNode）无缝集成至UE的动画蓝图（Animation Blueprint），将生成的表情数据应用于任何角色骨骼网格体。</li>
+<li><strong>参数化控制</strong>：支持在运行时动态调整面部动画的各项参数，如表情强度、平滑度、眼睑和嘴唇偏移等，以实现对最终效果的精细控制。</li>
+<li><strong>音频处理</strong>：内置音频处理管线，自动将输入的音频（多声道、任意采样率）转换为A2F引擎所需的格式（单声道、16kHz）。</li>
+</ul>
+<p><strong>第三方库集成</strong></p>
+<ul>
+<li><p><strong>SDK编译与集成</strong>：插件的核心功能基于 NVIDIA Audio2Face C++ SDK。SDK源码被编译成动态链接库（DLL），并作为第三方模块集成到插件中。</p>
+<img src="https://chao53.github.io/images/a2f.jpg" width="66%" height="66%">
+</li>
+<li><p><strong>依赖管理</strong>：所有必需的运行时依赖项，包括编译后的SDK库、NVIDIA CUDA 运行时库、TensorRT 库以及 miniaudio 库，均已包含在插件的 ThirdParty 和 Binaries 目录中，无需用户手动安装。</p>
+</li>
+<li><p><strong>跨平台音频</strong>：使用轻量级 miniaudio 库处理底层音频捕捉，确保低延迟和跨平台兼容性。</p>
+</li>
+</ul>
+<p><strong>工作流程</strong></p>
+<ol>
+<li>将插件提供的 AudioCaptureComponent（用于实时）或 AudioCurveSourceComponent（用于文件）添加到场景中的 Actor 上。</li>
+<li>在组件的细节面板中，指定要使用的A2F模型目录。</li>
+<li>在动画蓝图中，添加 X_Audio2Face 动画节点，并将其连接到最终姿势输出。</li>
+<li>通过蓝图或C++调用相应组件的函数，启动音频处理和动画生成。</li>
+</ol>
 
       </section>
 
@@ -183,12 +191,12 @@
             <div class="article-nav-item layout-padding">
   <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
     
-      <div class="card-cover" background-image-lazy data-img="/svn_cover.jpg"></div>
+      <div class="card-cover" background-image-lazy data-img="/banner.jpg"></div>
     
     <div class="card-text">
       
-        <a href="/2024/08/20/SVNUELauncher/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">UE SVN 启动器</h2>
+        <a href="/2024/08/20/OtherTool/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">其他工具合集</h2>
         </a>
       
       <div class="card-text--row">Prev</div>
@@ -200,12 +208,12 @@
             <div class="article-nav-item layout-padding">
   <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
     
-      <div class="card-cover" background-image-lazy data-img="/crypto.jpg"></div>
+      <div class="card-cover" background-image-lazy data-img="/Evolution_cover.png"></div>
     
     <div class="card-text">
       
-        <a href="/2024/08/20/crypto%E4%BF%A1%E5%8F%B7%E9%A2%84%E8%AD%A6%E4%B8%8E%E9%87%8F%E5%8C%96%E5%9B%9E%E6%B5%8B%E5%B7%A5%E5%85%B7/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">crypto信号预警与量化回测工具</h2>
+        <a href="/2024/08/20/Evalution/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">Evalution</h2>
         </a>
       
       <div class="card-text--row">Next</div>
