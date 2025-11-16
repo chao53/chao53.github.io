@@ -3,7 +3,7 @@ title: UE5 Audio2Face音频驱嘴型插件
 cover: /a2fc.jpg
 top: 6
 d1: 将英伟达的Audio2Face 
-d2: 编译出的SDk。以第三方
+d2: 编译出的SDK。以第三方
 d3: 库的形式接入UE5
 tags:
   - UE5
