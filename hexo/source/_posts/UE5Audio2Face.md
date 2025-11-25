@@ -53,4 +53,6 @@ date: 2024-08-20 16:15:48
 1. 将插件提供的 AudioCaptureComponent（用于实时）或 AudioCurveSourceComponent（用于文件）添加到场景中的 Actor 上。
 2. 在组件的细节面板中，指定要使用的A2F模型目录。
 3. 在动画蓝图中，添加 X_Audio2Face 动画节点，并将其连接到最终姿势输出。
+
+   <img src="https://chao53.github.io/images/a2fABP.jpg" width="100%" height="100%">
 4. 通过蓝图或C++调用相应组件的函数，启动音频处理和动画生成。
